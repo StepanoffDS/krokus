@@ -1,4 +1,4 @@
-import { email, footerNavs, tels } from "@/constants/company-info";
+import { email, footerNavs, tels } from "@@/constants/company-info";
 import LogoFooterIcon from "../../icons/logo-footer-icon";
 import FacebookIcon from "../../icons/socials/facebook-icon";
 import InstagramIcon from "../../icons/socials/instagram-icon";
@@ -6,7 +6,7 @@ import XIcon from "../../icons/socials/x-icon";
 import YoutubeIcon from "../../icons/socials/youtube-icon";
 import styles from "./footer.module.scss";
 import FooterMenu from "./footer-menu";
-import { formatTel } from "@/scripts/helpers/utils";
+import { formatTel } from "@@/scripts/helpers/utils";
 
 interface Props {
 	className?: string;

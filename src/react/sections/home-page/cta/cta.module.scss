@@ -1,4 +1,4 @@
-@import "@/styles/mixins.scss";
+@use "@@/styles/mixins.scss" as *;
 
 .cta-wrapper {
 	padding: 59px 0px;

@@ -1,4 +1,4 @@
-import Cta from "@/react/sections/home-page/cta";
+import Cta from "@@/react/sections/home-page/cta";
 import Footer from "../ui/footer";
 import Header from "../ui/header";
 import RunningLine from "../ui/running-line";

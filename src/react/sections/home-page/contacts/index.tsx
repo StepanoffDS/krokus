@@ -1,7 +1,7 @@
-import { address, schedule, tels } from "@/constants/company-info";
+import { address, schedule, tels } from "@@/constants/company-info";
 import styles from "./contacts.module.scss";
-import map from "@/react/components/illustrations/map.png";
-import { formatTel } from "@/scripts/helpers/utils";
+import map from "@@/react/components/illustrations/map.png";
+import { formatTel } from "@@/scripts/helpers/utils";
 
 interface Props {
 	className?: string;

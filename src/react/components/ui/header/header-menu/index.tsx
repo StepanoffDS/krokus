@@ -1,11 +1,11 @@
-import { formatTel } from "@/scripts/helpers/utils";
+import { formatTel } from "@@/scripts/helpers/utils";
 import styles from "./header-menu.module.scss";
 import HeaderBin from "../header-bin";
 import HeaderLangs from "../header-langs";
 import SearchBtn from "../header-nav-btns/search-btn";
 import ProfileBtn from "../header-nav-btns/profile-btn";
 import LikeBtn from "../header-nav-btns/like-btn";
-import { tels } from "@/constants/company-info";
+import { tels } from "@@/constants/company-info";
 import MobileMenu from "../../mobile-menu";
 
 const HeaderMenu = () => {

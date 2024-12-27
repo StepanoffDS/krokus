@@ -1,5 +1,5 @@
 import styles from "./header-nav-btns.module.scss";
-import SearchIcon from "@/react/components/icons/search-icon";
+import SearchIcon from "@@/react/components/icons/search-icon";
 
 interface Props {
 	className?: string;

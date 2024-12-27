@@ -1,7 +1,7 @@
 import styles from "./corporate-clients.module.scss";
 
-import Divider from "@/react/components/ui/divider";
-import Button from "@/react/components/ui/button";
+import Divider from "@@/react/components/ui/divider";
+import Button from "@@/react/components/ui/button";
 
 interface Props {
 	className?: string;

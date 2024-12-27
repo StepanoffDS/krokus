@@ -1,3 +1,5 @@
+@use "sass:color";
+
 :root {
 	--font: "Poppins", sans-serif;
 	--font-accent: "Georgia", serif;
@@ -5,8 +7,8 @@
 	--bg: #fff;
 
 	--accent: #c0080b;
-	--accent-dark: #{darken(#c0080b, 5%)};
-	--white-dark: #{darken(#fff, 10%)};
+	--accent-dark: #{color.scale(#c0080b, $lightness: -10%)};
+	--white-dark: #{color.scale(#fff, $lightness: -15%)};
 	--accent-text: #fff;
 	--gold: #dcb983;
 	--black: #251f1f;

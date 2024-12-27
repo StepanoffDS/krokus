@@ -1,5 +1,5 @@
 import styles from "./header-nav-btns.module.scss";
-import LikeIcon from "@/react/components/icons/like-icon";
+import LikeIcon from "@@/react/components/icons/like-icon";
 
 interface Props {
 	className?: string;

@@ -1,14 +1,15 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import MenuIcon from "../../icons/menu-icon";
 import styles from "./mobile-menu.module.scss";
-import { footerNavs, tels } from "@/constants/company-info";
+import { footerNavs, tels } from "@@/constants/company-info";
 import MenuCloseIcon from "../../icons/menu-close-icon";
 import ProfileBtn from "../header/header-nav-btns/profile-btn";
 import LikeBtn from "../header/header-nav-btns/like-btn";
 import HeaderBin from "../header/header-bin";
 import MiniLogoIcon from "../../icons/mini-logo-icon";
-import { formatTel } from "@/scripts/helpers/utils";
+import { formatTel } from "@@/scripts/helpers/utils";
 import HeaderLangs from "../header/header-langs";
+import { useClickOutside } from "@@/scripts/hooks/use-click-outside";
 
 interface Props {
 	className?: string;
@@ -16,18 +17,33 @@ interface Props {
 
 const MobileMenu = ({ className }: Props) => {
 	const [isOpen, setIsOpen] = useState(false);
+	const menuRef = useRef<HTMLDivElement>(null);
 
 	const toggleMenu = () => {
 		setIsOpen(!isOpen);
 		document.body.style.overflow = isOpen ? "auto" : "hidden";
+
+		const classListAction = !isOpen ? "add" : "remove";
+		document.body.classList[classListAction]("overlay");
 	};
+
+	useClickOutside({
+		ref: menuRef,
+		handler: () => {
+			if (isOpen) {
+				toggleMenu();
+			}
+		},
+	});
 
 	return (
 		<div className={className}>
 			<button className={styles["menu-btn"]} onClick={toggleMenu}>
 				<MenuIcon />
 			</button>
-			<div className={`${styles["menu"]} ${isOpen ? styles["open"] : ""}`}>
+			<div
+				className={`${styles["menu"]} ${isOpen ? styles["open"] : ""}`}
+				ref={menuRef}>
 				<header className={styles["menu-header"]}>
 					<MiniLogoIcon />
 

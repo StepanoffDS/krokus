@@ -1,4 +1,4 @@
-import { footerNavs } from "@/constants/company-info";
+import { footerNavs } from "@@/constants/company-info";
 import LogoIcon from "../../icons/logo-icon";
 import HeaderMenu from "./header-menu";
 import styles from "./header.module.scss";

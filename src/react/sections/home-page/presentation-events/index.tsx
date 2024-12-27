@@ -1,15 +1,13 @@
-import SectionHeader from "@/react/components/ui/section-header";
+import SectionHeader from "@@/react/components/ui/section-header";
 import styles from "./presentation-events.module.scss";
 
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import "@splidejs/react-splide/css";
+import "@splidejs/splide/dist/css/splide.min.css";
 
-import flowers from "@/react/components/illustrations/flowers.jpg";
-import Divider from "@/react/components/ui/divider";
-import Button from "@/react/components/ui/button";
+import flowers from "@@/react/components/illustrations/flowers.jpg";
+import Divider from "@@/react/components/ui/divider";
+import Button from "@@/react/components/ui/button";
 
 interface Props {
 	className?: string;
@@ -25,7 +23,7 @@ const PresentationEvents = ({ className }: Props) => {
 		arrows: false,
 		width: "100%",
 		// cover: true,
-		interval: 10000,
+		interval: 5000,
 		classes: {
 			pagination: `splide__pagination pagination pagination-3 ${styles["pagination"]}`,
 		},

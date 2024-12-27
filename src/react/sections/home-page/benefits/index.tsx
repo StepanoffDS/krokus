@@ -1,7 +1,7 @@
-import Benefit01 from "@/react/components/illustrations/benefit-01";
+import Benefit01 from "@@/react/components/illustrations/benefit-01";
 import styles from "./benefits.module.scss";
-import Benefit02 from "@/react/components/illustrations/benefit-02";
-import Benefit03 from "@/react/components/illustrations/benefit-03";
+import Benefit02 from "@@/react/components/illustrations/benefit-02";
+import Benefit03 from "@@/react/components/illustrations/benefit-03";
 
 interface Props {
 	className?: string;

@@ -1,4 +1,4 @@
-@use "@/styles/mixins.scss" as *;
+@use "@@/styles/mixins.scss" as *;
 
 .menu-btn {
 	display: none;
@@ -18,7 +18,7 @@
 .menu {
 	position: fixed;
 	top: 0;
-	right: -100%; // Исходное положение скрыто
+	right: -100%;
 	height: 100%;
 	background-color: #fff;
 	box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1);
@@ -30,10 +30,11 @@
 
 	display: flex;
 	flex-direction: column;
-}
+	justify-content: space-between;
 
-.open {
-	right: 0; // Позиция, когда меню открыто
+	&.open {
+		right: 0;
+	}
 }
 
 .menu-header {
@@ -57,7 +58,7 @@
 	flex-direction: column;
 	gap: 30px;
 
-	margin-top: 126px;
+	// margin-top: 126px;
 }
 
 .nav-link {
@@ -71,7 +72,7 @@
 	flex-direction: column;
 	gap: 20px;
 
-	margin-top: auto;
+	// margin-top: auto;
 	padding: 20px 20px 16px;
 
 	background: var(--gray-1);

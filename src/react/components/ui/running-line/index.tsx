@@ -30,7 +30,7 @@ const RunningLine = () => {
 					isMarquee ? styles["marquee"] : styles["marquee-static"]
 				}
 				}`}
-				style={{ "--line-speed": "0s" } as React.CSSProperties}>
+				style={{ "--line-speed": "20s" } as React.CSSProperties}>
 				<div className={styles["marquee-content"]}>
 					{text.map((item, index) => (
 						<div key={item} className={styles["marquee-elem"]}>

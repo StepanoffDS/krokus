@@ -1,11 +1,9 @@
 import styles from "./discover.module.scss";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import "@splidejs/react-splide/css";
+import "@splidejs/splide/dist/css/splide.min.css";
 
-import flowers from "@/react/components/illustrations/flowers.jpg";
+import flowers from "@@/react/components/illustrations/flowers.jpg";
 
 interface Props {
 	className?: string;
@@ -15,13 +13,13 @@ const Discover = ({ className }: Props) => {
 	const splideOptions = {
 		type: "loop",
 		perPage: 1,
-		// autoplay: true,
+		autoplay: true,
 		pauseOnHover: false,
 		pagination: true,
 		arrows: false,
 		width: "100%",
 		cover: true,
-		interval: 10000,
+		interval: 5000,
 		classes: {
 			pagination: `splide__pagination pagination pagination-1`,
 		},

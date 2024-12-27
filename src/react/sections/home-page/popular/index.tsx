@@ -1,5 +1,5 @@
-import ListingCard from "@/react/components/cards/listing-card";
-import MainListingContainer from "@/react/components/containers/main-listing";
+import ListingCard from "@@/react/components/cards/listing-card";
+import MainListingContainer from "@@/react/components/containers/main-listing";
 
 interface Props {
 	className?: string;

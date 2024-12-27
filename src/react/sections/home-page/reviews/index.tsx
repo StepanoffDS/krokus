@@ -1,15 +1,13 @@
-import Button from "@/react/components/ui/button";
+import Button from "@@/react/components/ui/button";
 import styles from "./reviews.module.scss";
 
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import "@splidejs/react-splide/css";
+import "@splidejs/splide/dist/css/splide.min.css";
 
-import flowers from "@/react/components/illustrations/flowers.jpg";
-import StarIcon from "@/react/components/icons/star-icon";
-import BigKIcon from "@/react/components/icons/big-k-icon";
+import flowers from "@@/react/components/illustrations/flowers.jpg";
+import StarIcon from "@@/react/components/icons/star-icon";
+import BigKIcon from "@@/react/components/icons/big-k-icon";
 
 interface Props {
 	className?: string;
@@ -24,7 +22,7 @@ const Reviews = ({ className }: Props) => {
 		arrows: false,
 		// width: "100%",
 		// cover: true,
-		interval: 10000,
+		interval: 5000,
 		classes: {
 			pagination: `splide__pagination pagination pagination-4`,
 		},

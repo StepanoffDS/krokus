@@ -1,7 +1,7 @@
 import styles from "./listing-card.module.scss";
 
 import DiscountIcon from "../../icons/discount-icon";
-import product from "@/react/components/illustrations/product.png";
+import product from "@@/react/components/illustrations/product.png";
 
 interface Props {
 	className?: string;

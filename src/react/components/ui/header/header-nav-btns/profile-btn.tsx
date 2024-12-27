@@ -1,5 +1,5 @@
 import styles from "./header-nav-btns.module.scss";
-import ProfileIcon from "@/react/components/icons/profile-icon";
+import ProfileIcon from "@@/react/components/icons/profile-icon";
 
 interface Props {
 	className?: string;

@@ -1,4 +1,4 @@
-import CartIcon from "@/react/components/icons/cart-icon";
+import CartIcon from "@@/react/components/icons/cart-icon";
 import styles from "./header-bin.module.scss";
 import btnStyles from "./../header-nav-btns/header-nav-btns.module.scss";
 

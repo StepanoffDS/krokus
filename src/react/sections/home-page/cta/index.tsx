@@ -1,5 +1,5 @@
 import styles from "./cta.module.scss";
-import CtaForm from "@/react/components/forms/cta-form";
+import CtaForm from "@@/react/components/forms/cta-form";
 
 interface Props {
 	className?: string;
