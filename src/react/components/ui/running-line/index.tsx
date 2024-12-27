@@ -21,6 +21,7 @@ const RunningLine = () => {
 
 	const isLast = (index: number) => index < text.length - 1;
 	const isFirst = (index: number) => index === 0;
+	console.log(123);
 
 	return (
 		<div className={styles["running-line"]}>
