@@ -1,0 +1,19 @@
+@use "@/styles/mixins.scss" as *;
+
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 22px;
+}
+
+.btn {
+	@include mediaMd {
+		width: 100%;
+	}
+}
+
+.radio {
+	label {
+		align-items: center;
+	}
+}

@@ -1,0 +1,178 @@
+@use "@/styles/mixins.scss" as *;
+
+.footer {
+	background-color: var(--black);
+	padding: 80px 0px;
+}
+
+.row {
+	display: flex;
+	justify-content: space-between;
+	gap: 40px;
+
+	&:nth-child(1) {
+		padding-bottom: 39px;
+		border-bottom: 1px solid #5c4d4d;
+	}
+
+	&:nth-child(2) {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		margin-top: 40px;
+	}
+
+	@include mediaXl {
+		&:nth-child(2) {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	@include mediaMd {
+		flex-direction: column;
+		gap: 32px;
+
+		&:nth-child(2) {
+			grid-template-columns: 1fr;
+			gap: 40px;
+		}
+	}
+}
+
+.logo {
+	margin-top: 8px;
+
+	@include mediaMd {
+		margin-top: 0;
+	}
+}
+
+.socials {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.social-link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 50px;
+	height: 50px;
+
+	border-radius: 50%;
+
+	background: var(--gold);
+
+	overflow: visible;
+
+	svg {
+		flex-shrink: 0;
+	}
+
+	transition: var(--transition);
+
+	&:hover {
+		opacity: var(--opacity);
+	}
+}
+
+.menu {
+}
+
+.subtitle {
+	color: #fff;
+
+	font-family: var(--font-accent);
+	font-size: 30px;
+	font-weight: 700;
+	line-height: 100%;
+}
+
+.menu-list {
+	display: grid;
+	gap: 12px;
+
+	margin-top: 40px;
+}
+
+.menu-link {
+	color: var(--pale-link);
+
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 164%;
+
+	transition: var(--transition);
+
+	&:hover {
+		color: var(--gold);
+	}
+}
+
+.contacts {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 12px;
+
+	.subtitle {
+		text-align: right;
+		margin-bottom: 28px;
+	}
+
+	@include mediaXl {
+		align-items: flex-start;
+	}
+}
+
+.phone {
+	color: #fff;
+
+	font-size: 30px;
+	font-weight: 300;
+	line-height: 160%;
+
+	transition: var(--transition);
+
+	&:hover {
+		color: var(--gold);
+	}
+}
+
+.email {
+	color: var(--pale-link);
+
+	font-size: 30px;
+	font-weight: 300;
+	line-height: 160%;
+
+	transition: var(--transition);
+
+	&:hover {
+		color: var(--gold);
+	}
+}
+
+.info {
+	color: var(--pale-link);
+
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 160%;
+	text-align: right;
+
+	@include mediaXl {
+		text-align: left;
+	}
+}
+
+.copyright {
+	color: #fff;
+
+	font-size: 12px;
+	font-weight: 500;
+	line-height: 160%;
+
+	margin-top: 38px;
+}

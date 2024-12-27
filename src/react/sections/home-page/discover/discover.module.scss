@@ -1,0 +1,132 @@
+@use "@/styles/mixins.scss" as *;
+
+.discover {
+	max-width: 1920px;
+	margin: 0 auto;
+
+	position: relative;
+}
+
+.content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+
+	color: #fff;
+
+	@include mediaMd {
+		justify-content: flex-start;
+		padding: 20px;
+	}
+}
+
+.title {
+	font-family: var(--font-accent);
+	font-size: 80px;
+	font-weight: 700;
+	line-height: 100%;
+
+	@include mediaMd {
+		font-size: 45px;
+
+		margin-top: 20px;
+	}
+}
+
+.subtitle {
+	margin-top: 5px;
+
+	font-family: var(--font-accent);
+	font-size: 40px;
+	font-weight: 700;
+	line-height: 100%;
+
+	@include mediaMd {
+		font-size: 24px;
+	}
+}
+
+.cta-btns {
+	display: flex;
+	gap: 20px;
+
+	margin-top: 40px;
+
+	@include mediaMd {
+		flex-direction: column;
+		width: 100%;
+	}
+}
+
+.cta-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	padding: 16px 32px;
+
+	border-radius: var(--border-radius);
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 110%;
+
+	transition: var(--transition);
+
+	&:nth-child(1) {
+		background: #fff;
+		color: var(--accent);
+
+		&:hover {
+			background: var(--white-dark);
+		}
+	}
+
+	&:nth-child(2) {
+		background: var(--accent);
+		color: #fff;
+
+		&:hover {
+			background: var(--accent-dark);
+		}
+	}
+
+	// &:hover {
+	// 	opacity: var(--opacity-2);
+	// }
+
+	@include mediaMd {
+		width: 100%;
+	}
+}
+
+.slider {
+	position: relative;
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: var(--black);
+		opacity: 0.3;
+	}
+}
+
+.slide {
+	aspect-ratio: 1771 / 415;
+	min-height: 314px;
+}
+
+.slide img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center center;
+}

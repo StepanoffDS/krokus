@@ -1,0 +1,36 @@
+@use "@/styles/mixins.scss" as *;
+
+.header-nav-btn {
+	width: 34px;
+	height: 34px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background: var(--gray-3);
+	border-radius: 50%;
+
+	cursor: pointer;
+
+	transition: var(--transition);
+
+	&:hover {
+		opacity: var(--opacity);
+	}
+
+	@include mediaXl {
+		width: 45px;
+		height: 45px;
+	}
+
+	// @include mediaLg {
+	// 	svg {
+	// 		// width: 16px;
+
+	// 		path {
+	// 			width: 100%;
+	// 		}
+	// 	}
+	// }
+}

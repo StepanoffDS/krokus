@@ -1,0 +1,64 @@
+@use "@/styles/mixins.scss" as *;
+
+.header {
+}
+
+.middle {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	padding: 40px 20px;
+
+	@include mediaLg {
+		justify-content: space-between;
+
+		padding: 10px 20px;
+	}
+}
+
+.middle-btns {
+	display: none;
+
+	@include mediaLg {
+		display: flex;
+		gap: 5px;
+	}
+}
+
+.middle-btn svg {
+	width: 18px;
+	height: 17px;
+}
+
+.logo {
+	display: inline-flex;
+	@include mediaLg {
+		width: 120px;
+	}
+}
+
+.nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 60px;
+
+	@include mediaXl {
+		display: none;
+	}
+}
+
+.nav-link {
+	padding-bottom: 11px;
+
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 110%;
+
+	transition: var(--transition);
+
+	&:hover {
+		opacity: var(--opacity);
+	}
+}

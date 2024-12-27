@@ -1,0 +1,85 @@
+@use "@/styles/mixins.scss" as *;
+
+.item {
+	position: relative;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.item-discount {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+
+	position: absolute;
+	top: 10px;
+	left: 10px;
+
+	border-radius: 20px;
+	padding: 7px 15px;
+
+	background: var(--accent);
+	color: var(--accent-text);
+
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 110%;
+}
+
+.item-img {
+	aspect-ratio: 372 / 308;
+	max-width: 100%;
+	width: 100%;
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center center;
+	}
+
+	@include mediaXxl {
+		aspect-ratio: 372 / 462;
+	}
+
+	@include mediaMd {
+		aspect-ratio: 372 / 485;
+	}
+}
+
+.item-title {
+	margin-top: 20px;
+
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 110%;
+}
+
+.item-prices {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	gap: 3px;
+
+	margin-top: 10px;
+}
+
+.price-now {
+	font-family: var(--font-accent);
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 110%;
+
+	color: var(--gray-2);
+}
+
+.price-old {
+	color: var(--accent);
+	text-decoration: line-through;
+
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 110%;
+}

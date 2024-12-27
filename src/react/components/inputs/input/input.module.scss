@@ -1,0 +1,29 @@
+.form-input {
+	width: 100%;
+
+	padding: 14px;
+
+	border-radius: var(--border-radius);
+	border: 1px solid var(--black);
+
+	background: transparent;
+	color: var(--black);
+
+	font-family: var(--font);
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 160%;
+
+	&::placeholder {
+		color: var(--black);
+
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 160%;
+		opacity: 0.4;
+	}
+
+	&:focus {
+		outline: 3px solid var(--gold);
+	}
+}

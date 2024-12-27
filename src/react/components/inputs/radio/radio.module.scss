@@ -1,0 +1,82 @@
+.form-group {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+
+	--size: 20px;
+	position: relative;
+
+	input {
+		width: 20px;
+		height: 20px;
+		border: 1px solid var(--black);
+		border-radius: var(--border-radius);
+		background: transparent;
+	}
+}
+
+.form-group *,
+.form-group *:before,
+.form-group *:after {
+	box-sizing: border-box;
+}
+
+.form-group .form-input {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+.form-group input:checked ~ svg {
+	height: calc(135% * 0.6);
+}
+.form-group label:active::before {
+	background-color: #e6e6e6;
+}
+.form-group label {
+	position: relative;
+	color: var(--black);
+	line-height: var(--size);
+	cursor: pointer;
+	user-select: none;
+	line-height: 140%;
+}
+.form-group label::before {
+	content: "";
+	flex-shrink: 0;
+	height: var(--size);
+	width: var(--size);
+	margin-right: 8px;
+	float: left;
+	border: 1px solid var(--black);
+	border-radius: var(--border-radius);
+	transition: 0.15s all ease-out;
+}
+.form-group svg {
+	stroke: var(--black);
+	stroke-width: 3px;
+	height: 0;
+	width: calc(var(--size) * 0.6);
+	position: absolute;
+	left: calc(var(--size) * 0.21);
+	top: calc(var(--size) * 0.2);
+	stroke-dasharray: 33;
+}
+
+.form-label {
+	display: flex;
+
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 160%;
+	color: var(--black);
+
+	a {
+		color: var(--accent);
+	}
+}

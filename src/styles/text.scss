@@ -1,0 +1,25 @@
+@use "@/styles/mixins.scss" as *;
+
+.title-1 {
+	color: var(--gray-2);
+	font-family: var(--font-accent);
+	font-size: 50px;
+	font-weight: 700;
+	line-height: 100%;
+
+	@include mediaMd {
+		font-size: 30px;
+	}
+}
+
+.title-2 {
+	color: var(--gray-2);
+	font-family: var(--font-accent);
+	font-size: 35px;
+	font-weight: 700;
+	line-height: 100%;
+
+	@include mediaMd {
+		font-size: 30px;
+	}
+}

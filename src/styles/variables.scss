@@ -1,0 +1,28 @@
+:root {
+	--font: "Poppins", sans-serif;
+	--font-accent: "Georgia", serif;
+
+	--bg: #fff;
+
+	--accent: #c0080b;
+	--accent-dark: #{darken(#c0080b, 5%)};
+	--white-dark: #{darken(#fff, 10%)};
+	--accent-text: #fff;
+	--gold: #dcb983;
+	--black: #251f1f;
+
+	--gray-1: #f8f7f7;
+	--gray-2: #7d7369;
+	--gray-3: #d8d0c8;
+	--gray-4: #bdafa1;
+	--gray-5: #dadada;
+	--gray-6: #f0eae4;
+
+	--pale-link: #b99e9e;
+
+	--border-radius: 5px;
+
+	--opacity: 0.75;
+	--opacity-2: 0.85;
+	--transition: all 0.3s ease;
+}

@@ -1,0 +1,73 @@
+@use "@/styles/mixins.scss" as *;
+
+.body {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: center;
+	gap: 40px;
+
+	padding: 40px 0px;
+
+	@include mediaLg {
+		grid-template-columns: 1fr;
+		gap: 35px;
+	}
+}
+
+.address {
+	margin-top: 40px;
+
+	font-size: 30px;
+	font-weight: 300;
+	line-height: 160%;
+}
+
+.schedule {
+	display: grid;
+	gap: 12px;
+
+	margin-top: 12px;
+
+	p {
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 160%;
+	}
+}
+
+.phones {
+	display: grid;
+	gap: 12px;
+
+	margin-top: 12px;
+}
+
+.phone {
+	color: var(--accent);
+
+	font-size: 30px;
+	font-weight: 300;
+	line-height: 160%;
+
+	transition: var(--transition);
+
+	&:hover {
+		opacity: var(--opacity);
+	}
+}
+
+.map {
+	height: 450px;
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center center;
+	}
+
+	@include mediaMd {
+		height: auto;
+		aspect-ratio: 350 / 300;
+	}
+}

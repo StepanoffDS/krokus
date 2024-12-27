@@ -1,0 +1,132 @@
+@use "./fonts.scss";
+@use "./variables.scss";
+@use "./animations.scss";
+@use "./text.scss";
+@import "./mixins.scss";
+
+:root {
+	background-color: var(--bg);
+	color: var(--black);
+
+	font-family: var(--font);
+	line-height: 1.5;
+	font-weight: 400;
+
+	color-scheme: light dark;
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-width: 320px;
+	min-height: 100vh;
+}
+
+a {
+	color: inherit;
+	text-decoration: inherit;
+	transition: var(--transition);
+}
+
+button {
+	border: none;
+	background: transparent;
+	font-family: inherit;
+	cursor: pointer;
+}
+
+.overflow-hidden {
+	overflow-y: hidden;
+}
+
+.pagination {
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	gap: 10px !important;
+	bottom: 4% !important;
+
+	button {
+		width: 5px !important;
+		height: 5px !important;
+		margin: 0 !important;
+		opacity: 1 !important;
+		transform: scale(1) !important;
+		background: var(--bg) !important;
+	}
+
+	&-1 {
+		button {
+			&.is-active {
+				background: var(--gold) !important;
+			}
+		}
+
+		@include mediaMd {
+			bottom: 6% !important;
+		}
+	}
+
+	&-2 {
+		bottom: 6%;
+		button {
+			&.is-active {
+				background: var(--accent) !important;
+			}
+		}
+	}
+
+	&-3 {
+		bottom: -6% !important;
+		button {
+			background: var(--gold) !important;
+			&.is-active {
+				background: var(--accent) !important;
+			}
+		}
+
+		@include mediaMd {
+			bottom: -10% !important;
+		}
+	}
+
+	&-4 {
+		position: relative;
+		bottom: -11% !important;
+		button {
+			background: var(--gray-2) !important;
+			&.is-active {
+				background: var(--accent) !important;
+			}
+		}
+
+		@include mediaMd {
+			bottom: -9% !important;
+		}
+	}
+}
+
+.container {
+	margin: 0 auto;
+	padding: 0 80px;
+	max-width: calc(1610px + 160px);
+
+	@include mediaXl {
+		padding: 0 40px;
+	}
+
+	@include mediaMd {
+		padding: 0 20px;
+	}
+}

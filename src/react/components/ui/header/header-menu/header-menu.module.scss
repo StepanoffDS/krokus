@@ -1,0 +1,67 @@
+@use "@/styles/mixins.scss" as *;
+
+.menu {
+	padding: 17px 40px;
+	background: var(--gray-1);
+
+	@include mediaLg {
+		padding: 13px 20px;
+	}
+}
+
+.menu-wrapper {
+	display: flex;
+	justify-content: space-between;
+
+	max-width: 1920px;
+	margin: 0 auto;
+}
+
+.menu-col {
+	display: flex;
+	align-items: center;
+}
+
+.menu-col.menu-col-1 {
+	gap: 20px;
+
+	font-size: 20px;
+	font-weight: 300;
+	> a:hover {
+		color: var(--accent);
+	}
+
+	> p {
+		color: var(--accent);
+	}
+
+	@include mediaLg {
+		font-size: 16px;
+	}
+}
+
+.menu-col.menu-col-2 {
+	@include mediaLg {
+		display: none;
+	}
+}
+
+.sub-menu {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.langs-desktop {
+	@include mediaXl {
+		display: none;
+	}
+}
+
+.mobile-menu {
+	display: none;
+
+	@include mediaXl {
+		display: block;
+	}
+}

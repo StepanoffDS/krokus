@@ -1,0 +1,87 @@
+@use "@/styles/mixins.scss" as *;
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	padding: 42px 0;
+
+	@include mediaMd {
+		justify-content: center;
+		padding: 40px 0;
+	}
+}
+
+.btn-more {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+
+	padding: 14px 35px;
+
+	color: var(--gray-2);
+	border: 1px solid var(--gray-2);
+	border-radius: var(--border-radius);
+
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 110%;
+
+	transition: var(--transition);
+
+	&--mobile {
+		display: none;
+	}
+
+	&:hover {
+		background: var(--black);
+		color: #fff;
+	}
+
+	@include mediaMd {
+		display: none;
+
+		&--mobile {
+			display: flex;
+		}
+	}
+}
+
+.btn-more-count {
+	color: var(--gray-4);
+	margin-left: 1px;
+}
+
+.content {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 40px;
+
+	@include mediaXl {
+		grid-template-columns: repeat(3, 1fr);
+
+		& > *:nth-child(7),
+		& > *:nth-child(8) {
+			display: none;
+		}
+	}
+
+	@include mediaMd {
+		grid-template-columns: repeat(2, 1fr);
+
+		& > *:nth-child(5),
+		& > *:nth-child(6) {
+			display: none;
+		}
+	}
+}
+
+.footer {
+	margin-top: 22px;
+
+	@include mediaMd {
+		margin-top: 42px;
+	}
+}

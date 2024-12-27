@@ -1,0 +1,30 @@
+@mixin media($width) {
+	@media (max-width: $width) {
+		@content;
+	}
+}
+
+@mixin mediaXxl {
+	// 1280
+	@media (max-width: 1310px) {
+		@content;
+	}
+}
+
+@mixin mediaXl {
+	@media (max-width: 1040px) {
+		@content;
+	}
+}
+
+@mixin mediaLg {
+	@media (max-width: 820px) {
+		@content;
+	}
+}
+
+@mixin mediaMd {
+	@media (max-width: 640px) {
+		@content;
+	}
+}
