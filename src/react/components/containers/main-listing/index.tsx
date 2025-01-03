@@ -8,7 +8,7 @@ interface Props {
 	title: string;
 	qty: number;
 	link: string;
-	hasDivider: boolean;
+	hasDivider?: boolean;
 }
 
 const MainListingContainer = ({

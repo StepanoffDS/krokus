@@ -41,7 +41,7 @@ const ProductGallery = ({ className }: Props) => {
 	};
 
 	const renderSlides = () => {
-		return [...Array(10)].map((slide, index) => (
+		return [...Array(10)].map((_, index) => (
 			<SplideSlide key={index} className={styles["slide"]}>
 				<img src={flowers} alt={`slide ${index}`} />
 			</SplideSlide>
