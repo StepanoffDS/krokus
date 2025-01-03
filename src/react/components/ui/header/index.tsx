@@ -1,4 +1,4 @@
-import { footerNavs } from "@@/constants/company-info";
+import { NAVS } from "@@/constants/company-info";
 import LogoIcon from "../../icons/logo-icon";
 import HeaderMenu from "./header-menu";
 import styles from "./header.module.scss";
@@ -6,8 +6,14 @@ import LikeBtn from "./header-nav-btns/like-btn";
 import HeaderBin from "./header-bin";
 import SearchBtn from "./header-nav-btns/search-btn";
 import MobileMenu from "../mobile-menu";
+import { useLocation } from "react-router";
 
 const Header = () => {
+	const location = useLocation();
+	console.log(location);
+
+	const isAccentLink = (link: string) => link === location.pathname;
+
 	return (
 		<header className={styles["header"]}>
 			<HeaderMenu />
@@ -25,8 +31,13 @@ const Header = () => {
 				</div>
 			</div>
 			<nav className={styles["nav"]}>
-				{footerNavs[1].links.map(({ name, link }) => (
-					<a key={link} href={link} className={styles["nav-link"]}>
+				{NAVS[1].links.map(({ name, link }) => (
+					<a
+						key={link}
+						href={link}
+						className={`${styles["nav-link"]} ${
+							isAccentLink(link) ? styles["nav-link--accent"] : ""
+						}`}>
 						{name}
 					</a>
 				))}

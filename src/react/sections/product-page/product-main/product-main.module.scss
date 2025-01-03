@@ -1,0 +1,33 @@
+@use "@@/styles/mixins.scss" as *;
+
+.content {
+	display: flex;
+	gap: 20px;
+
+	@include media($prelg) {
+		flex-direction: column;
+	}
+}
+
+.gallery {
+	max-width: clamp(35rem, 12.189rem + 28.51vw, 43.75rem);
+
+	@include mediaXxl {
+		max-width: clamp(25.625rem, 3.421rem + 39.47vw, 35rem);
+	}
+
+	@include media($prelg) {
+		max-width: 100%;
+	}
+}
+
+.info {
+}
+
+.divider {
+	margin-top: 40px;
+}
+
+.more-products {
+	margin-bottom: 40px;
+}

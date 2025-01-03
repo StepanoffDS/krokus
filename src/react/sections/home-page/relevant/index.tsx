@@ -13,7 +13,7 @@ const Relevant = ({ className }: Props) => {
 			className={className}
 			link="#!">
 			{[...Array(8)].map((_, index) => (
-				<ListingCard key={index} />
+				<ListingCard key={index} id="1" />
 			))}
 		</MainListingContainer>
 	);

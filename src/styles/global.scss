@@ -47,6 +47,21 @@ button {
 	cursor: pointer;
 }
 
+summary {
+	list-style-type: none; /* Firefox */
+}
+
+summary::-webkit-details-marker {
+	display: none; /* Chrome */
+}
+
+input:not([type="range"]),
+select {
+	&:focus {
+		outline: 2px solid var(--gold);
+	}
+}
+
 .overlay {
 	&::before {
 		content: "";
@@ -58,6 +73,12 @@ button {
 		background-color: rgba(0, 0, 0, 0.5);
 		z-index: 3;
 	}
+}
+
+.custom-scrollbar {
+	--scrollbar-width: 25px;
+
+	scrollbar-width: thin;
 }
 
 .overflow-hidden {
@@ -142,5 +163,14 @@ button {
 
 	@include mediaMd {
 		padding: 0 20px;
+	}
+}
+.slider--thumb {
+	.splide__slide {
+		opacity: 0.4;
+		border: none !important;
+		&.is-active {
+			opacity: 1;
+		}
 	}
 }

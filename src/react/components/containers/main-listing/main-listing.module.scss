@@ -19,7 +19,7 @@
 	align-items: center;
 	gap: 10px;
 
-	padding: 14px 35px;
+	padding: 14px 32px;
 
 	color: var(--gray-2);
 	border: 1px solid var(--gray-2);
@@ -35,13 +35,9 @@
 		display: none;
 	}
 
-	&:hover {
-		background: var(--black);
-		color: #fff;
-	}
-
 	@include mediaMd {
 		display: none;
+		width: 100%;
 
 		&--mobile {
 			display: flex;

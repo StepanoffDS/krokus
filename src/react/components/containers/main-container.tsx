@@ -2,17 +2,16 @@ import Cta from "@@/react/sections/home-page/cta";
 import Footer from "../ui/footer";
 import Header from "../ui/header";
 import RunningLine from "../ui/running-line";
+import { Outlet } from "react-router";
 
-const MainContainer = ({
-	children,
-}: {
-	children: React.ReactNode | React.ReactNode[];
-}) => {
+const MainContainer = () => {
 	return (
 		<>
 			<RunningLine />
 			<Header />
-			{children}
+			<div>
+				<Outlet />
+			</div>
 			<Cta />
 			<Footer />
 		</>

@@ -1,0 +1,156 @@
+@use "@@/styles/mixins.scss" as *;
+
+.cart {
+	margin-top: 40px;
+}
+
+.cart-info {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+
+	@include mediaMd {
+		flex-direction: column-reverse;
+	}
+}
+
+.cart-counter {
+	display: inline-flex;
+	align-items: center;
+
+	height: 50px;
+
+	border-radius: var(--border-radius);
+	border: 1px solid var(--gray-2);
+
+	overflow: hidden;
+
+	@include mediaMd {
+		width: 100%;
+		justify-content: space-between;
+	}
+}
+
+.cart-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 50px;
+	height: 100%;
+	flex-shrink: 0;
+
+	color: var(--gray-2);
+	background: var(--gray-6);
+
+	transition: var(--transition);
+
+	&:hover {
+		color: #fff;
+		background: var(--gray-2);
+	}
+
+	&:disabled {
+		pointer-events: none;
+		cursor: none;
+		opacity: 0.6;
+	}
+}
+
+.cart-qty {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	height: 100%;
+	width: 60px;
+
+	border: none;
+	border-left: 1px solid var(--gray-2);
+	border-right: 1px solid var(--gray-2);
+	text-align: center;
+
+	font-family: var(--font);
+
+	background: transparent;
+	color: var(--gray-2);
+
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 110%;
+
+	&:focus {
+		outline: none !important;
+	}
+
+	&::placeholder {
+		opacity: 0.6;
+	}
+
+	@include mediaMd {
+		width: 100%;
+	}
+}
+
+.prices {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 6px;
+
+	@include mediaMd {
+		align-items: center;
+	}
+}
+
+.price-now {
+	color: var(--gray-2);
+
+	font-family: var(--font-accent);
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 100%;
+}
+
+.price-old {
+	color: var(--accent);
+
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 110%;
+
+	text-decoration: line-through;
+}
+
+.cart-actions {
+	display: flex;
+	gap: 10px;
+
+	margin-top: 20px;
+}
+
+.btn-add {
+	height: 50px;
+
+	@include mediaMd {
+		width: 100%;
+	}
+}
+
+.btn-like {
+	height: 50px;
+	width: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 16px;
+
+	svg {
+		width: 16px;
+		height: 16px;
+	}
+
+	@include mediaMd {
+		flex-shrink: 0;
+	}
+}

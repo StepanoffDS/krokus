@@ -1,0 +1,22 @@
+@use "@@/styles/mixins.scss" as *;
+
+.product-info {
+	display: flex;
+	flex-direction: column;
+}
+
+.desc {
+	margin-top: 20px;
+}
+
+.title {
+	@include mediaSm {
+		font-size: 35px;
+	}
+}
+
+.cart {
+	@include media($prelg) {
+		order: 1;
+	}
+}

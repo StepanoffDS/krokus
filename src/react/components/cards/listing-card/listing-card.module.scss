@@ -9,23 +9,6 @@
 }
 
 .item-discount {
-	display: flex;
-	align-items: center;
-	gap: 10px;
-
-	position: absolute;
-	top: 10px;
-	left: 10px;
-
-	border-radius: 20px;
-	padding: 7px 15px;
-
-	background: var(--accent);
-	color: var(--accent-text);
-
-	font-size: 16px;
-	font-weight: 500;
-	line-height: 110%;
 }
 
 .item-img {

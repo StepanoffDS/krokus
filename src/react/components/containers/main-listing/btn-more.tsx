@@ -1,3 +1,4 @@
+import Button from "../../ui/button";
 import styles from "./main-listing.module.scss";
 
 interface Props {
@@ -8,10 +9,13 @@ interface Props {
 
 const BtnMore = ({ className, qty, link }: Props) => {
 	return (
-		<a href={link} className={`${styles["btn-more"]} ${className}`}>
+		<Button
+			href={link}
+			className={`${styles["btn-more"]} ${className}`}
+			variant="outline">
 			Skatīt visus{" "}
 			{qty && <span className={styles["btn-more-count"]}>{qty}</span>}
-		</a>
+		</Button>
 	);
 };
 

@@ -1,4 +1,4 @@
-import { email, footerNavs, tels } from "@@/constants/company-info";
+import { email, NAVS, tels } from "@@/constants/company-info";
 import LogoFooterIcon from "../../icons/logo-footer-icon";
 import FacebookIcon from "../../icons/socials/facebook-icon";
 import InstagramIcon from "../../icons/socials/instagram-icon";
@@ -37,7 +37,7 @@ const Footer = ({ className }: Props) => {
 						</div>
 					</div>
 					<div className={styles["row"]}>
-						{footerNavs.map((nav) => (
+						{NAVS.map((nav) => (
 							<FooterMenu key={nav.title} footerNav={nav} />
 						))}
 						<div className={styles["contacts"]}>

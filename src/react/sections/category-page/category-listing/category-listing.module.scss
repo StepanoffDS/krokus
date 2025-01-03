@@ -1,0 +1,34 @@
+@use "@@/styles/mixins.scss" as *;
+
+.listing-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 40px;
+
+	@include mediaLg {
+		gap: 20px;
+	}
+}
+
+.listing {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 40px;
+
+	@include media(1100px) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+.btn {
+	@include mediaLg {
+		width: 100%;
+	}
+}
+
+div.divider {
+	@include mediaLg {
+		margin-top: 0;
+	}
+}

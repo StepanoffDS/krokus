@@ -8,6 +8,7 @@ interface Props {
 	title: string;
 	qty: number;
 	link: string;
+	hasDivider: boolean;
 }
 
 const MainListingContainer = ({
@@ -16,6 +17,7 @@ const MainListingContainer = ({
 	title,
 	qty,
 	link,
+	hasDivider = true,
 }: Props) => {
 	return (
 		<section className={className}>
@@ -32,7 +34,7 @@ const MainListingContainer = ({
 							qty={qty}
 							className={styles["btn-more--mobile"]}
 						/>
-						<Divider />
+						{hasDivider && <Divider />}
 					</footer>
 				</div>
 			</div>

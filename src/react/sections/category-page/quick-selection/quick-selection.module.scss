@@ -1,0 +1,183 @@
+@use "@@/styles/mixins.scss" as *;
+
+.quick-selection {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	@include mediaLg {
+		box-sizing: content-box;
+	}
+}
+
+.title {
+	margin-top: 40px;
+
+	color: var(--gray-2);
+	font-family: var(--font-accent);
+	font-size: 50px;
+	font-weight: 700;
+	line-height: 100%;
+
+	@include mediaMd {
+		font-size: 30px;
+		margin-top: 0;
+	}
+}
+
+.subtitle {
+	margin-top: 10px;
+
+	color: var(--gray-2);
+	font-family: var(--font-accent);
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 100%;
+
+	@include mediaMd {
+		font-size: 20px;
+	}
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	@include mediaLg {
+		margin: 0 -40px;
+	}
+
+	@include mediaMd {
+		margin: 0 -20px;
+	}
+}
+
+.categories-btns {
+	display: flex;
+	justify-content: center;
+
+	width: 100%;
+
+	margin-top: 20px;
+
+	border-bottom: 1px solid var(--gray-5);
+
+	@include mediaLg {
+	}
+
+	@include mediaSm {
+		@include hiddenScroll;
+		justify-content: flex-start;
+		border-bottom: none;
+	}
+}
+
+.category-btn {
+	transform: translateY(1px);
+	padding: 16px 36px;
+
+	color: var(--black);
+
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 110%;
+	text-wrap: nowrap;
+
+	transition: var(--transition);
+
+	&:hover {
+		opacity: var(--opacity-2);
+	}
+
+	&--active {
+		border-bottom: 1px solid var(--accent);
+	}
+
+	span {
+		margin-left: 6px;
+
+		color: var(--pale-text);
+	}
+
+	@include mediaSm {
+		border-bottom: 1px solid var(--gray-5);
+
+		&--active {
+			border-bottom: 1px solid var(--accent);
+		}
+	}
+}
+
+.prices-btns {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+
+	margin-top: 20px;
+
+	@include mediaLg {
+		justify-content: flex-start;
+
+		@include hiddenScroll;
+
+		scrollbar-width: thin;
+		padding-left: 20px;
+	}
+}
+
+.price-btn {
+	padding: 9px 16px;
+	border-radius: 20px;
+
+	background: var(--light-gray);
+	color: var(--black);
+
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 110%;
+	text-wrap: nowrap;
+
+	transition: var(--transition);
+
+	&:hover {
+		opacity: var(--opacity-2);
+	}
+
+	&--active {
+		background: var(--black);
+		color: var(--accent-text);
+	}
+}
+
+.listing-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+
+	@include mediaLg {
+		margin: 20px 40px 0;
+	}
+
+	@include mediaMd {
+		margin: 20px 20px 0;
+	}
+}
+
+.listing {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 40px;
+
+	@include mediaMd {
+		grid-template-columns: repeat(2, 1fr);
+		row-gap: 20px;
+	}
+}
+
+.btn-more {
+	@include mediaLg {
+		width: 100%;
+	}
+}

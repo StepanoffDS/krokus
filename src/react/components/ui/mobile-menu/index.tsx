@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import MenuIcon from "../../icons/menu-icon";
 import styles from "./mobile-menu.module.scss";
-import { footerNavs, tels } from "@@/constants/company-info";
+import { NAVS, tels } from "@@/constants/company-info";
 import MenuCloseIcon from "../../icons/menu-close-icon";
 import ProfileBtn from "../header/header-nav-btns/profile-btn";
 import LikeBtn from "../header/header-nav-btns/like-btn";
@@ -58,7 +58,7 @@ const MobileMenu = ({ className }: Props) => {
 					</div>
 				</header>
 				<nav className={styles["nav"]}>
-					{footerNavs[1].links.map(({ name, link }) => (
+					{NAVS[1].links.map(({ name, link }) => (
 						<a key={link} href={link} className={styles["nav-link"]}>
 							{name}
 						</a>

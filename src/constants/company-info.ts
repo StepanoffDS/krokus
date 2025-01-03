@@ -1,3 +1,5 @@
+import { routes } from "./routing";
+
 export const email = "info@krokus.lv";
 
 export const tels = ["(+371) 259 073 00", "(+371) 200 303 06"];
@@ -6,7 +8,7 @@ export const schedule = ["Pr. - Pk. 09:00 - 20:00", "Se.-Sv. 09:00 - 16:00"];
 
 export const address = "Artilērijas iela 25, Rīga";
 
-export const footerNavs = [
+export const NAVS = [
 	{
 		title: "Klientiem",
 		links: [
@@ -53,23 +55,23 @@ export const footerNavs = [
 		links: [
 			{
 				name: "Pušķi un kompozīcijas",
-				link: "#!",
+				link: routes.category("1"),
 			},
 			{
 				name: "Ziedi",
-				link: "#!",
+				link: routes.category("2"),
 			},
 			{
 				name: "Dāvanu komplekti",
-				link: "#!",
+				link: routes.category("3"),
 			},
 			{
 				name: "Aksesuāri",
-				link: "#!",
+				link: routes.category("4"),
 			},
 			{
 				name: "Dāvanu kartes",
-				link: "#!",
+				link: routes.category("5"),
 			},
 		],
 	},

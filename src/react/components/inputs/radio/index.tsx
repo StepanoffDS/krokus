@@ -4,11 +4,12 @@ interface Props {
 	className?: string;
 	children: string | React.ReactNode;
 	id: string;
+	type?: "normal" | "big";
 }
 
-const Radio = ({ className, children, id }: Props) => {
+const Radio = ({ className, children, id, type = "normal" }: Props) => {
 	return (
-		<div className={`${styles["form-group"]} ${className}`}>
+		<div className={`${styles["form-group"]} ${className} ${styles[type]}`}>
 			<input
 				id={id}
 				name={id}
@@ -21,6 +22,8 @@ const Radio = ({ className, children, id }: Props) => {
 			<svg xmlns="http://www.w3.org/2000/svg" style={{ display: "none" }}>
 				<symbol id="checkmark" viewBox="0 0 24 24">
 					<path
+						stroke="currentColor"
+						strokeWidth={4}
 						strokeLinecap="round"
 						strokeMiterlimit="10"
 						fill="none"

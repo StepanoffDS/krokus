@@ -20,4 +20,16 @@
 	&:hover {
 		opacity: var(--opacity-2);
 	}
+
+	&--outline {
+		background: transparent;
+		border: 1px solid var(--gray-2);
+		color: var(--gray-2);
+
+		&:hover {
+			opacity: 1;
+			background: var(--gray-2);
+			color: var(--accent-text);
+		}
+	}
 }

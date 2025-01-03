@@ -4,6 +4,7 @@
 	gap: 10px;
 
 	--size: 20px;
+	--margin-right: 8px;
 	position: relative;
 
 	input {
@@ -12,6 +13,17 @@
 		border: 1px solid var(--black);
 		border-radius: var(--border-radius);
 		background: transparent;
+	}
+
+	&.big {
+		--size: 24px;
+		--margin-right: 14px;
+
+		svg {
+			width: calc(var(--size) * 0.7);
+			position: absolute;
+			left: calc(var(--size) * 0.15);
+		}
 	}
 }
 
@@ -33,7 +45,8 @@
 }
 
 .form-group input:checked ~ svg {
-	height: calc(135% * 0.6);
+	height: calc(var(--size) * 0.6);
+	color: var(--accent);
 }
 .form-group label:active::before {
 	background-color: #e6e6e6;
@@ -44,14 +57,13 @@
 	line-height: var(--size);
 	cursor: pointer;
 	user-select: none;
-	line-height: 140%;
 }
 .form-group label::before {
 	content: "";
 	flex-shrink: 0;
 	height: var(--size);
 	width: var(--size);
-	margin-right: 8px;
+	margin-right: var(--margin-right);
 	float: left;
 	border: 1px solid var(--black);
 	border-radius: var(--border-radius);
@@ -75,6 +87,8 @@
 	font-weight: 500;
 	line-height: 160%;
 	color: var(--black);
+
+	width: 100%;
 
 	a {
 		color: var(--accent);
