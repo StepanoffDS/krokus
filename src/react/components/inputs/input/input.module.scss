@@ -1,25 +1,45 @@
+.form-group {
+  position: relative;
+  width: 100%;
+}
+
+.form-label {
+  position: absolute;
+  left: 10px;
+  top: -6px;
+
+  padding: 0 5px;
+  border-radius: var(--border-radius);
+
+  background: var(--bg);
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 160%;
+  color: var(--black);
+}
+
 .form-input {
-	width: 100%;
+  width: 100%;
 
-	padding: 14px;
+  padding: 14px;
 
-	border-radius: var(--border-radius);
-	border: 1px solid var(--black);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--black);
 
-	background: transparent;
-	color: var(--black);
+  background: transparent;
+  color: var(--black);
 
-	font-family: var(--font);
-	font-size: 16px;
-	font-weight: 500;
-	line-height: 160%;
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 160%;
 
-	&::placeholder {
-		color: var(--black);
+  &::placeholder {
+    color: var(--black);
 
-		font-size: 16px;
-		font-weight: 500;
-		line-height: 160%;
-		opacity: 0.4;
-	}
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 160%;
+    opacity: 0.4;
+  }
 }

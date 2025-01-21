@@ -1,33 +1,35 @@
-@use "sass:color";
+@use 'sass:color';
 
 :root {
-	--font: "Poppins", sans-serif;
-	--font-accent: "Georgia", serif;
+  --font: 'Poppins', sans-serif;
+  --font-accent: 'Georgia', serif;
 
-	--bg: #fff;
+  --bg: #fff;
 
-	--accent: #c0080b;
-	--accent-dark: #{color.scale(#c0080b, $lightness: -10%)};
-	--white-dark: #{color.scale(#fff, $lightness: -15%)};
-	--accent-text: #fff;
-	--gold: #dcb983;
-	--pale-gold: #ebe0d5;
-	--black: #251f1f;
-	--pale-text: #c5c5c5;
-	--light-gray: #dfdfdf;
+  --accent: #c0080b;
+  --accent-dark: #{color.scale(#c0080b, $lightness: -10%)};
+  --white-dark: #{color.scale(#fff, $lightness: -15%)};
+  --accent-text: #fff;
+  --gold: #dcb983;
+  --pale-gold: #ebe0d5;
+  --black: #251f1f;
+  --pale-text: #c5c5c5;
+  --light-gray: #dfdfdf;
 
-	--gray-1: #f8f7f7;
-	--gray-2: #7d7369;
-	--gray-3: #d8d0c8;
-	--gray-4: #bdafa1;
-	--gray-5: #dadada;
-	--gray-6: #f0eae4;
+  --gray-1: #f8f7f7;
+  --gray-2: #7d7369;
+  --gray-3: #d8d0c8;
+  --gray-4: #bdafa1;
+  --gray-5: #dadada;
+  --gray-6: #f0eae4;
+  --gray-7: #edeaea;
 
-	--pale-link: #b99e9e;
+  --pale-link: #b99e9e;
 
-	--border-radius: 5px;
+  --border-radius: 5px;
+  --border-radius-2: 10px;
 
-	--opacity: 0.75;
-	--opacity-2: 0.85;
-	--transition: all 0.3s ease;
+  --opacity: 0.75;
+  --opacity-2: 0.85;
+  --transition: all 0.3s ease;
 }

@@ -1,0 +1,54 @@
+@use '@@/styles/mixins.scss' as *;
+
+.popup {
+  position: absolute;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100dvh;
+  z-index: 4;
+  border: 0;
+
+  background: rgba(37, 31, 31, 0.6);
+  display: none;
+
+  &--open {
+    display: flex;
+  }
+}
+
+.popup-content {
+  position: relative;
+
+  background: var(--bg);
+  border-radius: var(--border-radius-2);
+
+  overflow: hidden;
+
+  @include media($prelg) {
+    margin: 0 20px;
+  }
+}
+
+.popup-header {
+  display: flex;
+  justify-content: flex-end;
+
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  button {
+    display: flex;
+    width: 24px;
+    height: 24px;
+
+    color: var(--black);
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

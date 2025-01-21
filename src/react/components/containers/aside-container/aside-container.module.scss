@@ -1,0 +1,44 @@
+@use '@@/styles/mixins.scss' as *;
+
+.wrapper {
+  @include mediaLg {
+    margin: 0 -40px;
+    padding: 40px;
+    background: var(--gray-1);
+  }
+
+  @include mediaMd {
+    margin: 0 -20px;
+    padding: 20px;
+  }
+}
+
+.header {
+  display: none;
+
+  background: var(--gray-1);
+
+  @include mediaLg {
+    display: flex;
+  }
+}
+
+.header-btn {
+  width: 100%;
+
+  justify-content: space-between;
+
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include mediaLg {
+    gap: 0px;
+    margin-top: 20px;
+  }
+}

@@ -21,7 +21,7 @@ const usePriceRange = ({ min, max, minGap = 5 }: Props) => {
 			e.target.value === "" ? sliderMinValue : parseInt(e.target.value, 10);
 
 		// && value < maxVal - minGap
-		if (value >= sliderMinValue) {
+		if (value >= sliderMinValue && value < maxVal - minGap) {
 			setMinInput(value);
 			setMinVal(value);
 		}
@@ -31,8 +31,7 @@ const usePriceRange = ({ min, max, minGap = 5 }: Props) => {
 		const value =
 			e.target.value === "" ? sliderMaxValue : parseInt(e.target.value, 10);
 
-		//  && value > minVal + minGap
-		if (value <= sliderMaxValue) {
+		if (value <= sliderMaxValue && value > minVal + minGap) {
 			setMaxInput(value);
 			setMaxVal(value);
 		}

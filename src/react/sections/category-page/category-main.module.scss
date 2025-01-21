@@ -1,26 +1,9 @@
-@use "@@/styles/mixins.scss" as *;
-
-.wrapper {
-	display: grid;
-	grid-template-columns: 280px 1fr;
-	gap: 20px;
-
-	margin: 40px 0 80px;
-
-	@include mediaLg {
-		grid-template-columns: 1fr;
-		margin-top: 0px;
-		margin-bottom: 40px;
-	}
-}
+@use '@@/styles/mixins.scss' as *;
 
 .quick-selection {
-	grid-column: 2/3;
+  grid-column: 2/3;
 
-	@include media(1100px) {
-		grid-column: 1/-1;
-	}
-}
-
-.aside {
+  @include media(1100px) {
+    grid-column: 1/-1;
+  }
 }

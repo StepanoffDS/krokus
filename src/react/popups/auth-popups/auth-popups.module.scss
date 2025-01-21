@@ -1,0 +1,117 @@
+@use '@@/styles/mixins.scss' as *;
+
+.popup-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @include media($prelg) {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+}
+
+.popup-section {
+  @include popupSpace;
+
+  &--register {
+    background: var(--gray-1);
+
+    @include media($prelg) {
+      display: none;
+    }
+  }
+
+  &--hidden {
+    @include media($prelg) {
+      display: none;
+    }
+  }
+
+  &:not(&--hidden) {
+    @include media($prelg) {
+      display: block;
+    }
+  }
+}
+
+.popup-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.popup-title {
+  margin-bottom: 20px;
+
+  color: var(--gray-2);
+
+  font-family: var(--font-accent);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 100%;
+}
+
+.popup-input {
+  width: 357px;
+
+  @include mediaXl {
+    width: 340px;
+  }
+
+  @include media($prelg) {
+    width: 100%;
+  }
+}
+
+.popup-btn {
+  width: 100%;
+}
+
+.popup-link {
+  margin-top: 10px;
+
+  color: var(--accent);
+
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 110%;
+}
+
+.popup-footer {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  @include media($prelg) {
+    display: flex;
+  }
+}
+
+.popup-footer-title {
+  margin: 20px 0;
+  color: var(--gray-2);
+
+  font-family: var(--font-accent);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 100%;
+}
+
+.popup-footer-btn {
+  width: 100%;
+}
+
+.popup-container {
+  .popup-main {
+    padding: 0;
+  }
+
+  > div {
+    @include media($prelg) {
+      width: 100%;
+      max-width: 420px;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.link {
+  padding: 20px;
+
+  background: var(--gray-1);
+  color: var(--black);
+
+  border-left: 3px solid var(--gray-1);
+  border-bottom: 1px solid var(--gray-7);
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 110%;
+
+  &--active {
+    border-left: 3px solid var(--accent);
+  }
+
+  &:hover {
+    background: var(--gray-7);
+    opacity: var(--opacity);
+  }
+}
