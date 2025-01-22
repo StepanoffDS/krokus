@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import FiltersIcon from '../../icons/filters-icon';
 import Button from '../../ui/button';
 import styles from './aside-container.module.scss';
 

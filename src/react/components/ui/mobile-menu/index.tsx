@@ -10,7 +10,6 @@ import MiniLogoIcon from '../../icons/mini-logo-icon';
 import { formatTel } from '@@/scripts/helpers/utils';
 import HeaderLangs from '../header/header-langs';
 import { useClickOutside } from '@@/scripts/hooks/use-click-outside';
-import AuthPopup from '@@/react/popups/auth-popups/auth-popup';
 import OpenAuthPopupBtn from '@@/react/popups/auth-popups/open-auth-popup-btn';
 
 interface Props {

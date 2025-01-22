@@ -1,7 +1,7 @@
 import { profileRoutes } from '@@/constants/routing';
 import AsideContainer from '@@/react/components/containers/aside-container';
 import ArrowMenu from '@@/react/components/icons/arrow-menu';
-import { Link, useLocation, useNavigate } from 'react-router';
+import { Link, useLocation } from 'react-router';
 import styles from './profile-navigate.module.scss';
 
 const ProfileNavigate = () => {

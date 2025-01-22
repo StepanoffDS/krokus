@@ -1,5 +1,4 @@
 import OpenFeedbackPopupBtn from '@@/react/popups/feedback-popup/open-feedback-popup-btn';
-import Button from '../../ui/button';
 import styles from './profile-product-card.module.scss';
 import OpenPhotoFeedbackPopupBtn from '@@/react/popups/photo-feedback-popup/open-photo-feedback-popup-btn';
 
@@ -24,8 +23,6 @@ const ProfileProductCard = ({
   desc,
   productId,
 }: Props) => {
-  const buttonText = buttonType === 'upload' ? 'Upload' : 'Leave';
-
   return (
     <article
       className={`${styles['listing-item']} ${
