@@ -10,6 +10,9 @@ import ProfileContainer from './react/components/containers/profile-container/in
 import { routes } from './constants/routing.ts';
 import ProfileInfoPage from './react/pages/profile/profile-info-page.tsx';
 import ProfileHistoryPage from './react/pages/profile/profile-history-page.tsx';
+import ProfileFeedbacksPage from './react/pages/profile/profile-feedbacks-page.tsx';
+import ProfilePhotoFeedbacksPage from './react/pages/profile/profile-photo-feedbacks-page.tsx';
+import ProfileClientSupportPage from './react/pages/profile/profile-client-support-page.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -31,13 +34,16 @@ createRoot(document.getElementById('root')!).render(
             />
             <Route
               path={routes.profileFeedbacks}
-              element={<ProfileInfoPage />}
+              element={<ProfileFeedbacksPage />}
             />
             <Route
               path={routes.profilePhotoFeedbacks}
-              element={<ProfileInfoPage />}
+              element={<ProfilePhotoFeedbacksPage />}
             />
-            <Route path={routes.profileSupport} element={<ProfileInfoPage />} />
+            <Route
+              path={routes.profileSupport}
+              element={<ProfileClientSupportPage />}
+            />
           </Route>
         </Route>
       </Routes>

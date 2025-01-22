@@ -1,3 +1,4 @@
+import { togglePopup } from '@@/scripts/helpers/toggle-popup';
 import { useComponentsStore } from '@@/store';
 import { useShallow } from 'zustand/shallow';
 
@@ -6,13 +7,18 @@ interface Props {
 }
 
 const OpenAuthPopupBtn = ({ child }: Props) => {
-  const { setIsOpen } = useComponentsStore(
+  const { setIsOpen, isOpen } = useComponentsStore(
     useShallow((state) => ({
+      isOpen: state.isAuthPopupOpen,
       setIsOpen: state.setIsAuthPopupOpen,
     })),
   );
 
-  return <button onClick={() => setIsOpen(true)}>{child}</button>;
+  const handleClick = () => {
+    togglePopup({ setIsOpen, isOpen });
+  };
+
+  return <button onClick={handleClick}>{child}</button>;
 };
 
 export default OpenAuthPopupBtn;

@@ -1,0 +1,101 @@
+@use '@@/styles/mixins.scss' as *;
+
+.listing-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  padding: 20px 0;
+
+  border-bottom: 1px solid var(--gray-5);
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &.has-button .product-info {
+    grid-template-columns: repeat(3, 1fr);
+
+    > * {
+      max-width: 180px;
+    }
+  }
+
+  @include mediaMd {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    align-items: start;
+
+    &.has-button .product-info {
+      grid-template-columns: 1fr;
+      justify-items: start;
+      gap: 10px;
+
+      > * {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+.product-info {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  justify-items: end;
+  flex: 1;
+
+  @include mediaMd {
+    grid-template-columns: 1fr;
+    justify-items: start;
+    gap: 10px;
+  }
+}
+
+.product-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.product-code {
+  color: var(--accent);
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 120%;
+
+  justify-self: start;
+}
+
+.product-name,
+.product-price,
+.product-qty,
+.product-date {
+  color: var(--black);
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 120%;
+}
+
+.product-name {
+}
+
+.product-price {
+}
+
+.product-qty {
+}
+
+.product-date {
+}
+
+.product-button {
+  @include mediaMd {
+    grid-column: -1/1;
+    width: 100%;
+  }
+}

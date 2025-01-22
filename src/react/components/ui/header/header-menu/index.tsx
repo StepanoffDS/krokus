@@ -7,7 +7,6 @@ import ProfileBtn from '../header-nav-btns/profile-btn';
 import LikeBtn from '../header-nav-btns/like-btn';
 import { tels } from '@@/constants/company-info';
 import MobileMenu from '../../mobile-menu';
-import AuthPopup from '@@/react/popups/auth-popups/auth-popup';
 import OpenAuthPopupBtn from '@@/react/popups/auth-popups/open-auth-popup-btn';
 
 const token = false;

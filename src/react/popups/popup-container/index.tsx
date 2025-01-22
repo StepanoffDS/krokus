@@ -1,7 +1,8 @@
 import { useClickOutside } from '@@/scripts/hooks/use-click-outside';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import styles from './popup-container.module.scss';
 import CloseIcon from '@@/react/components/icons/close-icon';
+import { togglePopup } from '@@/scripts/helpers/toggle-popup';
 
 interface Props {
   className?: string;
@@ -20,18 +21,14 @@ const PopupContainer = ({
 }: Props) => {
   const popupRef = useRef<HTMLDivElement>(null);
 
-  const togglePopup = () => {
-    setIsOpen(!isOpen);
-    document.body.style.overflow = isOpen ? 'auto' : 'hidden';
-    const classListAction = !isOpen ? 'add' : 'remove';
-    document.body.classList[classListAction]('overlay');
-  };
-
   useClickOutside({
     ref: popupRef,
     handler: () => {
       if (isOpen) {
-        togglePopup();
+        togglePopup({
+          setIsOpen,
+          isOpen,
+        });
       }
     },
   });
@@ -39,7 +36,10 @@ const PopupContainer = ({
   return (
     <div>
       {buttonElem && (
-        <button className={className} onClick={togglePopup}>
+        <button
+          className={className}
+          onClick={() => togglePopup({ setIsOpen, isOpen })}
+        >
           {buttonElem}
         </button>
       )}
@@ -52,7 +52,8 @@ const PopupContainer = ({
       >
         <div className={styles['popup-content']} ref={popupRef}>
           <header className={styles['popup-header']}>
-            <button onClick={togglePopup}>
+            {/* TODO: Сделать чтобы кнопка закрытия сбрасывала все данные в окне */}
+            <button onClick={() => togglePopup({ setIsOpen, isOpen })}>
               <CloseIcon />
             </button>
           </header>

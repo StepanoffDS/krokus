@@ -1,0 +1,182 @@
+@use '@@/styles/mixins.scss' as *;
+
+.popup-main {
+  display: grid;
+  grid-template-columns: 321px 437px;
+
+  @include media($prelg) {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+}
+
+.popup-section {
+  @include popupSpace;
+
+  &:nth-child(2) {
+    background: var(--gray-1);
+
+    @include media($prelg) {
+      background: transparent;
+      padding-top: 20px;
+    }
+  }
+}
+
+.popup-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.popup-title {
+  margin-bottom: 20px;
+
+  color: var(--gray-2);
+
+  font-family: var(--font-accent);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 100%;
+}
+
+.popup-container {
+  .popup-main {
+    padding: 0;
+  }
+
+  > div {
+    @include media($prelg) {
+      width: 100%;
+      max-width: 420px;
+    }
+  }
+}
+
+.popup-thanks {
+  display: none;
+
+  color: var(--black);
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 180%;
+
+  text-align: center;
+
+  &--opened {
+    display: block;
+  }
+}
+
+.popup-form {
+  display: none;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+
+  &--opened {
+    display: flex;
+  }
+}
+
+.form-title {
+  margin-bottom: 30px;
+  color: var(--gray-2);
+
+  font-family: var(--font-accent);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 100%;
+
+  text-align: center;
+}
+
+.star-rating {
+  display: flex;
+  gap: 10px;
+
+  margin-bottom: 20px;
+}
+
+.textarea {
+  resize: none;
+}
+
+.btn {
+  margin-top: 20px;
+
+  @include media($prelg) {
+    width: 100%;
+  }
+}
+
+.upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.upload > input {
+  display: none;
+}
+
+.upload-text {
+  color: var(--black);
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 180%;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.file-name {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  padding: 0px 10px;
+
+  color: var(--black);
+  background: var(--light-gray);
+  border-radius: 20px;
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 180%;
+  text-transform: uppercase;
+
+  cursor: pointer;
+}
+
+.upload-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  padding: 16px 32px;
+  width: fit-content;
+
+  border-radius: var(--border-radius);
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 110%;
+
+  transition: var(--transition);
+
+  background: transparent;
+  border: 1px solid var(--gray-2);
+  color: var(--gray-2);
+
+  &:hover {
+    opacity: 1;
+    background: var(--gray-2);
+    color: var(--accent-text);
+  }
+}

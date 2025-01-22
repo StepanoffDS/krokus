@@ -4,7 +4,7 @@ interface Props {
   title: string;
   children: React.ReactNode;
   className?: string;
-  text?: string;
+  text?: string | JSX.Element;
 }
 
 const ProfileWrapperContainer = ({

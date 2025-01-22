@@ -6,13 +6,14 @@ import { FormInput } from '../input';
 interface Props {
   className?: string;
   hasLabel?: boolean;
+  id: string;
 }
 
-const PhoneInput = ({ className, hasLabel = true }: Props) => {
+const PhoneInput = ({ className, hasLabel = true, id }: Props) => {
   return (
     <div className={`${styles['phone']} ${className}`}>
       <Select
-        id="region"
+        id={id + 'region'}
         options={regions}
         className={styles['region']}
         color="black"
@@ -20,7 +21,7 @@ const PhoneInput = ({ className, hasLabel = true }: Props) => {
       <FormInput
         type="number"
         placeholder="Phone number"
-        id="phone"
+        id={id + 'phone'}
         label={hasLabel ? 'Phone number' : ''}
       />
     </div>

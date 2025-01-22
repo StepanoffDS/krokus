@@ -6,6 +6,8 @@
 
 $prelg: 900px;
 
+$profileWidth: 1100px;
+
 @mixin mediaXxl {
   @media (max-width: 1280px) {
     @content;

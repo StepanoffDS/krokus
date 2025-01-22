@@ -1,5 +1,5 @@
 import ProfileProductCard from '@@/react/components/cards/profile-product-card';
-import styles from './profile-history.module.scss';
+import styles from './profile-feedbacks.module.scss';
 import ProfileWrapperContainer from '@@/react/components/containers/profile-wrapper-container';
 import product from '@@/react/components/illustrations/product.png';
 
@@ -7,9 +7,9 @@ interface Props {
   className?: string;
 }
 
-const ProfileHistory = ({ className }: Props) => {
+const ProfileFeedbacks = ({ className }: Props) => {
   return (
-    <ProfileWrapperContainer className={className} title="Order history">
+    <ProfileWrapperContainer className={className} title="Leave feedback">
       <section className={styles['listing']}>
         {[...Array(3)].map((_, index) => (
           <ProfileProductCard
@@ -17,9 +17,8 @@ const ProfileHistory = ({ className }: Props) => {
             img={product}
             productId={'#980778980'}
             desc={'Red roses big bouquet'}
-            price={'24,99'}
-            qty={'1'}
             date={'23.04.2024'}
+            buttonType={'leave'}
           />
         ))}
       </section>
@@ -27,4 +26,4 @@ const ProfileHistory = ({ className }: Props) => {
   );
 };
 
-export default ProfileHistory;
+export default ProfileFeedbacks;

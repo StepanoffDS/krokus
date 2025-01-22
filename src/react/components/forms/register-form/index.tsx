@@ -27,7 +27,7 @@ const RegisterForm = ({ className }: Props) => {
           <Input placeholder="E-pasts" className={styles['input']} />
         </div>
         <div className={styles['popup-input']}>
-          <PhoneInput hasLabel={false} />
+          <PhoneInput hasLabel={false} id="register" />
         </div>
         <div className={styles['popup-input']}>
           <PasswordInput id="password" placeholder="Password" />

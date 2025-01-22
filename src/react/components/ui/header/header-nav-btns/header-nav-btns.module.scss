@@ -1,36 +1,42 @@
-@use "@@/styles/mixins.scss" as *;
+@use '@@/styles/mixins.scss' as *;
 
 .header-nav-btn {
-	width: 34px;
-	height: 34px;
+  width: 34px;
+  height: 34px;
 
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-	background: var(--gray-3);
-	border-radius: 50%;
+  background: var(--gray-3);
+  color: var(--black);
+  border-radius: 50%;
 
-	cursor: pointer;
+  cursor: pointer;
 
-	transition: var(--transition);
+  transition: var(--transition);
 
-	&:hover {
-		opacity: var(--opacity);
-	}
+  &--accent {
+    background: var(--black);
+    color: var(--gray-3);
+  }
 
-	@include mediaXl {
-		width: 45px;
-		height: 45px;
-	}
+  &:hover {
+    opacity: var(--opacity);
+  }
 
-	// @include mediaLg {
-	// 	svg {
-	// 		// width: 16px;
+  @include mediaXl {
+    width: 45px;
+    height: 45px;
+  }
 
-	// 		path {
-	// 			width: 100%;
-	// 		}
-	// 	}
-	// }
+  // @include mediaLg {
+  // 	svg {
+  // 		// width: 16px;
+
+  // 		path {
+  // 			width: 100%;
+  // 		}
+  // 	}
+  // }
 }

@@ -31,13 +31,13 @@ const ProfileInfo = ({ className }: Props) => {
               id="email"
               label="E-mail"
             />
-            <PhoneInput />
+            <PhoneInput id="personalNumber" />
           </section>
           <section className={styles['form-section']}>
             <p className={`${styles['desc']} profile-desc`}>Set new password</p>
-            <PasswordInput id="password" placeholder="New password" />
+            <PasswordInput id="newPassword" placeholder="New password" />
             <PasswordInput
-              id="repeatPassword"
+              id="repeatNewPassword"
               placeholder="Repeat new password"
             />
             <a href="#!" className={styles['forgot-password']}>
