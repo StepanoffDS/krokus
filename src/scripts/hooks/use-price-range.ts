@@ -1,12 +1,13 @@
-import { useState } from "react";
+import { useState } from 'react';
+
 
 interface Props {
-	min: number;
-	max: number;
-	minGap?: number;
+  min: number;
+  max: number;
+  minGap?: number;
 }
 
-const usePriceRange = ({ min, max, minGap = 5 }: Props) => {
+function usePriceRange({ min, max, minGap = 5 }: Props) {
 	const [sliderMinValue] = useState(min);
 	const [sliderMaxValue] = useState(max);
 
@@ -18,7 +19,7 @@ const usePriceRange = ({ min, max, minGap = 5 }: Props) => {
 
 	const handleMinInput = (e) => {
 		const value =
-			e.target.value === "" ? sliderMinValue : parseInt(e.target.value, 10);
+			e.target.value === '' ? sliderMinValue : parseInt(e.target.value, 10);
 
 		// && value < maxVal - minGap
 		if (value >= sliderMinValue && value < maxVal - minGap) {
@@ -29,7 +30,7 @@ const usePriceRange = ({ min, max, minGap = 5 }: Props) => {
 
 	const handleMaxInput = (e) => {
 		const value =
-			e.target.value === "" ? sliderMaxValue : parseInt(e.target.value, 10);
+			e.target.value === '' ? sliderMaxValue : parseInt(e.target.value, 10);
 
 		if (value <= sliderMaxValue && value > minVal + minGap) {
 			setMaxInput(value);
@@ -38,16 +39,16 @@ const usePriceRange = ({ min, max, minGap = 5 }: Props) => {
 	};
 
 	const handleInputKeyDown = (e, type) => {
-		if (e.key === "Enter") {
+		if (e.key === 'Enter') {
 			const value = parseInt(e.target.value, 10);
 			if (
-				type === "min" &&
+				type === 'min' &&
 				value >= sliderMinValue &&
 				value < maxVal - minGap
 			) {
 				setMinVal(value);
 			} else if (
-				type === "max" &&
+				type === 'max' &&
 				value <= sliderMaxValue &&
 				value > minVal + minGap
 			) {
@@ -71,6 +72,6 @@ const usePriceRange = ({ min, max, minGap = 5 }: Props) => {
 		setMinVal,
 		setMaxVal,
 	};
-};
+}
 
 export default usePriceRange;

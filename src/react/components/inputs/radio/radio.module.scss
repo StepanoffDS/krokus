@@ -1,96 +1,99 @@
 .form-group {
-	display: flex;
-	align-items: center;
-	gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 
-	--size: 20px;
-	--margin-right: 8px;
-	position: relative;
+  --size: 20px;
+  --margin-right: 8px;
+  position: relative;
 
-	input {
-		width: 20px;
-		height: 20px;
-		border: 1px solid var(--black);
-		border-radius: var(--border-radius);
-		background: transparent;
-	}
+  input {
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--black);
+    border-radius: var(--border-radius);
+    background: transparent;
+  }
 
-	&.big {
-		--size: 24px;
-		--margin-right: 14px;
+  &.big {
+    --size: 24px;
+    --margin-right: 14px;
 
-		svg {
-			width: calc(var(--size) * 0.7);
-			position: absolute;
-			left: calc(var(--size) * 0.15);
-		}
-	}
+    svg {
+      width: calc(var(--size) * 0.7);
+      position: absolute;
+      left: calc(var(--size) * 0.15);
+    }
+  }
 }
 
 .form-group *,
 .form-group *:before,
 .form-group *:after {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .form-group .form-input {
-	border: 0;
-	clip: rect(0 0 0 0);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	width: 1px;
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
-.form-group input:checked ~ svg {
-	height: calc(var(--size) * 0.6);
-	color: var(--accent);
+.form-group input[value='true'] ~ svg {
+  height: calc(var(--size) * 0.6);
+  color: var(--accent);
 }
 .form-group label:active::before {
-	background-color: #e6e6e6;
+  background-color: #e6e6e6;
 }
 .form-group label {
-	position: relative;
-	color: var(--black);
-	line-height: var(--size);
-	cursor: pointer;
-	user-select: none;
+  position: relative;
+  color: var(--black);
+  line-height: var(--size);
+  cursor: pointer;
+  user-select: none;
 }
 .form-group label::before {
-	content: "";
-	flex-shrink: 0;
-	height: var(--size);
-	width: var(--size);
-	margin-right: var(--margin-right);
-	float: left;
-	border: 1px solid var(--black);
-	border-radius: var(--border-radius);
-	transition: 0.15s all ease-out;
+  content: '';
+  flex-shrink: 0;
+  height: var(--size);
+  width: var(--size);
+  margin-right: var(--margin-right);
+  float: left;
+  border: 1px solid var(--black);
+  border-radius: var(--border-radius);
+  transition: 0.15s all ease-out;
+}
+.form-group--error label::before {
+  border: 2px solid var(--error);
 }
 .form-group svg {
-	stroke: var(--black);
-	stroke-width: 3px;
-	height: 0;
-	width: calc(var(--size) * 0.6);
-	position: absolute;
-	left: calc(var(--size) * 0.21);
-	top: calc(var(--size) * 0.2);
-	stroke-dasharray: 33;
+  stroke: var(--black);
+  stroke-width: 3px;
+  height: 0;
+  width: calc(var(--size) * 0.6);
+  position: absolute;
+  left: calc(var(--size) * 0.21);
+  top: calc(var(--size) * 0.2);
+  stroke-dasharray: 33;
 }
 
 .form-label {
-	display: flex;
+  display: flex;
 
-	font-size: 16px;
-	font-weight: 500;
-	line-height: 160%;
-	color: var(--black);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 160%;
+  color: var(--black);
 
-	width: 100%;
+  width: 100%;
 
-	a {
-		color: var(--accent);
-	}
+  a {
+    color: var(--accent);
+  }
 }

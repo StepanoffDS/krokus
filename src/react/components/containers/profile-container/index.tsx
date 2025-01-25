@@ -1,28 +1,29 @@
-import ProfileNavigate from '@@/react/sections/profile-page/profile-navigate';
 import { Navigate, Outlet } from 'react-router';
+import ProfileNavigate from '@@/react/sections/profile-page/profile-navigate';
+
 import ListingContainer from '../listing-container';
 
 interface Props {
-  className?: string;
+	className?: string;
 }
 
 const val = true;
 
 const ProfileContainer = ({ className }: Props) => {
-  if (val) {
-    return (
-      <div className={className}>
-        <div className="container">
-          <ListingContainer>
-            <ProfileNavigate />
-            <Outlet />
-          </ListingContainer>
-        </div>
-      </div>
-    );
-  } else {
-    return <Navigate to="/" />;
-  }
+	if (val) {
+		return (
+			<div className={className}>
+				<div className='container'>
+					<ListingContainer>
+						<ProfileNavigate />
+						<Outlet />
+					</ListingContainer>
+				</div>
+			</div>
+		);
+	} else {
+		return <Navigate to='/' />;
+	}
 };
 
 export default ProfileContainer;

@@ -1,0 +1,49 @@
+@use '@@/styles/mixins.scss' as *;
+
+.profile-form {
+  margin-top: 30px;
+
+  @include mediaMd {
+    margin-top: 7px;
+  }
+}
+
+.form-sections {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+
+  @include mediaXxl {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mediaMd {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.textarea {
+  grid-column: 1/-1;
+}
+
+.phone {
+  @include mediaXl {
+    grid-column: 1 / -1;
+  }
+}
+
+.form-actions {
+  margin-top: 20px;
+
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+
+  @include mediaMd {
+    flex-direction: column-reverse;
+
+    > * {
+      width: 100%;
+    }
+  }
+}

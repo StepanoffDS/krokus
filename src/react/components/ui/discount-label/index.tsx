@@ -1,5 +1,6 @@
-import DiscountIcon from "../../icons/discount-icon";
-import styles from "./discount-label.module.scss";
+import DiscountIcon from '../../icons/discount-icon';
+
+import styles from './discount-label.module.scss';
 
 interface Props {
 	className?: string;
@@ -7,7 +8,7 @@ interface Props {
 
 const DiscountLabel = ({ className }: Props) => {
 	return (
-		<div className={`${styles["item-discount"]} ${className}`}>
+		<div className={`${styles['item-discount']} ${className}`}>
 			<DiscountIcon />
 			Izdevīgi
 		</div>

@@ -1,4 +1,4 @@
-import CategoryMain from "../sections/category-page";
+import CategoryMain from '../sections/category-page';
 
 const CategoryPage = () => {
 	return <CategoryMain />;

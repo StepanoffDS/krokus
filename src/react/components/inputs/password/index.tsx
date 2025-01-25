@@ -1,36 +1,51 @@
-import { useState } from 'react';
+import { forwardRef, useState } from 'react';
+import { FieldError } from 'react-hook-form';
+
 import { EyeIcon, EyeOffIcon } from '../../icons/eye';
-import { FormInput } from '../input';
+import { LabelInput } from '../input';
+
 import styles from './password-input.module.scss';
 
 interface Props {
-  className?: string;
-  id?: string;
-  placeholder?: string;
+	className?: string;
+	error: FieldError;
+	placeholder?: string;
 }
 
-const PasswordInput = ({ className, id, placeholder }: Props) => {
-  const [type, setType] = useState<'password' | 'text'>('password');
+const PasswordInput = forwardRef(
+	(
+		{ className, placeholder, error, ...props }: Props,
+		ref: React.ForwardedRef<HTMLInputElement>,
+	) => {
+		const [type, setType] = useState<'password' | 'text'>('password');
 
-  const handleVisibility = () => {
-    if (type === 'password') {
-      setType('text');
-    } else {
-      setType('password');
-    }
-  };
+		const handleVisibility = () => {
+			if (type === 'password') {
+				setType('text');
+			} else {
+				setType('password');
+			}
+		};
 
-  return (
-    <div className={`${styles['password']} ${className}`}>
-      <FormInput type={type} placeholder={placeholder} id={id} />
-      <button
-        onClick={handleVisibility}
-        className={styles['password-visibility']}
-      >
-        {type === 'password' ? <EyeIcon /> : <EyeOffIcon />}
-      </button>
-    </div>
-  );
-};
+		return (
+			<div className={`${styles['password']} ${className}`}>
+				<LabelInput
+					type={type}
+					placeholder={placeholder}
+					error={error}
+					ref={ref}
+					{...props}
+				/>
+				<button
+					type='button'
+					onClick={handleVisibility}
+					className={styles['password-visibility']}
+				>
+					{type === 'password' ? <EyeIcon /> : <EyeOffIcon />}
+				</button>
+			</div>
+		);
+	},
+);
 
 export default PasswordInput;

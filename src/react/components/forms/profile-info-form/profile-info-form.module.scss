@@ -1,0 +1,53 @@
+@use '@@/styles/mixins.scss' as *;
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-sections {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+
+  @include media($profileWidth) {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+  }
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+
+  @include mediaMd {
+    flex-direction: column-reverse;
+
+    > * {
+      width: 100%;
+    }
+  }
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.desc {
+  margin-bottom: 20px;
+
+  @include mediaMd {
+    margin-top: 7px;
+    margin-bottom: 0;
+  }
+}
+
+.forgot-password {
+  color: var(--accent);
+  font-weight: 500;
+}

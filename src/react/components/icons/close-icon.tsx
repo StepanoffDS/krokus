@@ -1,24 +1,24 @@
 interface Props {
-  className?: string;
+	className?: string;
 }
 
 const CloseIcon = ({ className }: Props) => {
-  return (
-    <svg
-      className={className}
-      width="17"
-      height="17"
-      viewBox="0 0 17 17"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M16.5 0.500004L0.5 16.5M16.5 16.5L0.500001 0.5"
-        stroke="currentColor"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
+	return (
+		<svg
+			className={className}
+			width='17'
+			height='17'
+			viewBox='0 0 17 17'
+			fill='none'
+			xmlns='http://www.w3.org/2000/svg'
+		>
+			<path
+				d='M16.5 0.500004L0.5 16.5M16.5 16.5L0.500001 0.5'
+				stroke='currentColor'
+				strokeLinecap='round'
+			/>
+		</svg>
+	);
 };
 
 export default CloseIcon;

@@ -1,9 +1,10 @@
-import { useState } from "react";
-import Minus from "@@/react/components/icons/minus";
-import styles from "./product-cart.module.scss";
-import Plus from "@@/react/components/icons/plus";
-import Button from "@@/react/components/ui/button";
-import LikeIcon from "@@/react/components/icons/like-icon";
+import { useState } from 'react';
+import Minus from '@@/react/components/icons/minus';
+import Plus from '@@/react/components/icons/plus';
+import Button from '@@/react/components/ui/button';
+import LikeIcon from '@@/react/components/icons/like-icon';
+
+import styles from './product-cart.module.scss';
 
 interface Props {
 	className?: string;
@@ -28,39 +29,42 @@ const ProductCart = ({ className }: Props) => {
 	const toggleFav = () => setIsFav((prev) => !prev);
 
 	return (
-		<section className={`${styles["cart"]} ${className}`}>
-			<div className={styles["cart-info"]}>
-				<div className={styles["cart-counter"]}>
+		<section className={`${styles['cart']} ${className}`}>
+			<div className={styles['cart-info']}>
+				<div className={styles['cart-counter']}>
 					<button
-						className={`${styles["cart-btn"]} ${styles["cart-btn--add"]}`}
+						className={`${styles['cart-btn']} ${styles['cart-btn--add']}`}
 						onClick={minusQty}
-						disabled={qty === 0}>
+						disabled={qty === 0}
+					>
 						<Minus />
 					</button>
 					<input
-						type="number"
-						className={styles["cart-qty"]}
-						placeholder="0"
+						type='number'
+						className={styles['cart-qty']}
+						placeholder='0'
 						value={qty}
 					/>
 					<button
-						className={`${styles["cart-btn"]} ${styles["cart-btn--minus"]}`}
-						onClick={plusQty}>
+						className={`${styles['cart-btn']} ${styles['cart-btn--minus']}`}
+						onClick={plusQty}
+					>
 						<Plus />
 					</button>
 				</div>
-				<div className={styles["prices"]}>
-					<span className={styles["price-now"]}>24,99 €</span>
-					<span className={styles["price-old"]}>29,99 €</span>
+				<div className={styles['prices']}>
+					<span className={styles['price-now']}>24,99 €</span>
+					<span className={styles['price-old']}>29,99 €</span>
 				</div>
 			</div>
-			<div className={styles["cart-actions"]}>
-				<Button className={styles["btn-add"]}>Pievienot grozam</Button>
+			<div className={styles['cart-actions']}>
+				<Button className={styles['btn-add']}>Pievienot grozam</Button>
 				<Button
-					className={`${styles["btn-like"]}`}
-					variant={isFav ? "primary" : "outline"}
-					onClick={toggleFav}>
-					<LikeIcon fill={isFav ? "currentColor" : "none"} />
+					className={`${styles['btn-like']}`}
+					variant={isFav ? 'primary' : 'outline'}
+					onClick={toggleFav}
+				>
+					<LikeIcon fill={isFav ? 'currentColor' : 'none'} />
 				</Button>
 			</div>
 		</section>

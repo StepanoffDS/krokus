@@ -22,6 +22,10 @@
     }
   }
 
+  @include mediaXl {
+    flex-wrap: wrap;
+  }
+
   @include mediaMd {
     display: grid;
     grid-template-columns: 80px 1fr;
@@ -97,5 +101,9 @@
   @include mediaMd {
     grid-column: -1/1;
     width: 100%;
+
+    > button {
+      width: 100%;
+    }
   }
 }

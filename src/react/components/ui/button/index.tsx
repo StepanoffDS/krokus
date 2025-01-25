@@ -1,26 +1,26 @@
-import styles from "./button.module.scss";
+import styles from './button.module.scss';
 
 interface Props {
 	className?: string;
-	type?: "button" | "submit" | "reset";
+	type?: 'button' | 'submit' | 'reset';
 	onClick?: () => void;
 	href?: string;
 	children: string | React.ReactNode;
-	variant?: "primary" | "secondary" | "outline";
+	variant?: 'primary' | 'secondary' | 'outline';
 }
 
 const Button = ({
 	className,
-	type = "button",
+	type = 'button',
 	onClick,
 	href,
 	children,
-	variant = "primary",
+	variant = 'primary',
 }: Props) => {
 	const btnStyles = {
-		primary: styles["btn--primary"],
-		secondary: styles["btn--secondary"],
-		outline: styles["btn--outline"],
+		primary: styles['btn--primary'],
+		secondary: styles['btn--secondary'],
+		outline: styles['btn--outline'],
 	};
 
 	return (
@@ -28,14 +28,16 @@ const Button = ({
 			{!href ? (
 				<button
 					type={type}
-					className={`${styles["btn"]} ${btnStyles[variant]} ${className}`}
-					onClick={onClick}>
+					className={`${styles['btn']} ${btnStyles[variant]} ${className}`}
+					onClick={onClick}
+				>
 					{children}
 				</button>
 			) : (
 				<a
 					href={href}
-					className={`${styles["btn"]} ${btnStyles[variant]} ${className}`}>
+					className={`${styles['btn']} ${btnStyles[variant]} ${className}`}
+				>
 					{children}
 				</a>
 			)}

@@ -1,4 +1,4 @@
-import styles from "./section-header.module.scss";
+import styles from './section-header.module.scss';
 
 interface Props {
 	className?: string;
@@ -7,8 +7,8 @@ interface Props {
 
 const SectionHeader = ({ className, title }: Props) => {
 	return (
-		<header className={`${styles["header"]} ${className}`}>
-			<h2 className={`title-1 ${styles["title"]}`}>{title}</h2>
+		<header className={`${styles['header']} ${className}`}>
+			<h2 className={`title-1 ${styles['title']}`}>{title}</h2>
 		</header>
 	);
 };

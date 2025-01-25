@@ -1,5 +1,6 @@
-import styles from "./cta.module.scss";
-import CtaForm from "@@/react/components/forms/cta-form";
+import CtaForm from '@@/react/components/forms/cta-form';
+
+import styles from './cta.module.scss';
 
 interface Props {
 	className?: string;
@@ -7,10 +8,10 @@ interface Props {
 
 const Cta = ({ className }: Props) => {
 	return (
-		<section className={`${styles["cta-wrapper"]} ${className}`}>
-			<div className="container">
-				<div className={styles["body"]}>
-					<h2 className={`${styles["title"]}`}>
+		<section className={`${styles['cta-wrapper']} ${className}`}>
+			<div className='container'>
+				<div className={styles['body']}>
+					<h2 className={`${styles['title']}`}>
 						Īpašie piedāvājumi un jaunumi no krokus.lv Jūsu e-pastā
 					</h2>
 					<CtaForm />

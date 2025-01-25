@@ -7,8 +7,8 @@ export const tels = ['(+371) 259 073 00', '(+371) 200 303 06'];
 export const schedule = ['Pr. - Pk. 09:00 - 20:00', 'Se.-Sv. 09:00 - 16:00'];
 
 export const regions = [
-  { value: '371', label: '+371' },
-  { value: '7', label: '+7' },
+  { value: '+371', label: '+371' },
+  { value: '+7', label: '+7' },
 ];
 
 export const address = 'Artilērijas iela 25, Rīga';

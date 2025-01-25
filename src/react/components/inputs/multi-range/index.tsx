@@ -1,5 +1,6 @@
-import { useCallback, useEffect, useRef } from "react";
-import styles from "./multi-range.module.scss";
+import { useCallback, useEffect, useRef } from 'react';
+
+import styles from './multi-range.module.scss';
 
 interface Props {
 	minGap?: number;
@@ -61,23 +62,23 @@ const MultiRange = ({
 	};
 
 	return (
-		<div className={`${styles["range-slider"]} ${className}`}>
-			<div className={styles["slider-track"]} ref={range}></div>
+		<div className={`${styles['range-slider']} ${className}`}>
+			<div className={styles['slider-track']} ref={range}></div>
 			<input
-				type="range"
+				type='range'
 				min={sliderMinValue}
 				max={sliderMaxValue}
 				value={minVal}
 				onChange={slideMin}
-				className={styles["min-val"]}
+				className={styles['min-val']}
 			/>
 			<input
-				type="range"
+				type='range'
 				min={sliderMinValue}
 				max={sliderMaxValue}
 				value={maxVal}
 				onChange={slideMax}
-				className={styles["max-val"]}
+				className={styles['max-val']}
 			/>
 		</div>
 	);

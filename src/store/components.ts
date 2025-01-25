@@ -1,15 +1,10 @@
 import { create, StateCreator } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
+
 interface Props {
   isAuthPopupOpen: boolean;
   setIsAuthPopupOpen: (value: boolean) => void;
-
-  isFeedbackPopupOpen: boolean;
-  setIsFeedbackPopupOpen: (value: boolean) => void;
-
-  isPhotoFeedbackPopupOpen: boolean;
-  setIsPhotoFeedbackPopupOpen: (value: boolean) => void;
 }
 
 const createComponentsSlice: StateCreator<
@@ -18,19 +13,12 @@ const createComponentsSlice: StateCreator<
   [],
   Props
 > = (set) => ({
-  isAuthPopupOpen: false,
-  setIsAuthPopupOpen: (value) => set({ isAuthPopupOpen: value }),
-
-  isFeedbackPopupOpen: false,
-  setIsFeedbackPopupOpen: (value) => set({ isFeedbackPopupOpen: value }),
-
-  isPhotoFeedbackPopupOpen: false,
-  setIsPhotoFeedbackPopupOpen: (value) =>
-    set({ isPhotoFeedbackPopupOpen: value }),
+	isAuthPopupOpen: false,
+	setIsAuthPopupOpen: (value) => set({ isAuthPopupOpen: value }),
 });
 
 export const useComponentsStore = create<Props>()(
-  devtools((...args) => ({
-    ...createComponentsSlice(...args),
-  })),
+	devtools((...args) => ({
+		...createComponentsSlice(...args),
+	})),
 );

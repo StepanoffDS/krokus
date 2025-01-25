@@ -1,6 +1,8 @@
-import { useState } from "react";
-import TagClose from "../../icons/tag-close";
-import styles from "./select.module.scss";
+import { useState } from 'react';
+
+import TagClose from '../../icons/tag-close';
+
+import styles from './select.module.scss';
 
 interface IOption {
 	label: string;
@@ -33,30 +35,33 @@ const SelectTags = ({ options, className, id }: Props) => {
 	};
 
 	return (
-		<div className={`${styles["select-wrapper"]} ${className}`}>
+		<div className={`${styles['select-wrapper']} ${className}`}>
 			<select
 				name={id}
 				id={id}
-				className={`${styles["select"]} `}
-				onChange={(e) => handleSelect(e)}>
+				className={`${styles['select']} `}
+				onChange={(e) => handleSelect(e)}
+			>
 				{options.map((option) => (
 					<option
 						key={option.value}
 						value={option.value}
-						className={styles["option"]}
+						className={styles['option']}
 						defaultValue={options[0].value}
-						disabled={option.disabled}>
+						disabled={option.disabled}
+					>
 						{option.label}
 					</option>
 				))}
 			</select>
 			{selectedItems.length > 0 && (
-				<div className={styles["tags"]}>
+				<div className={styles['tags']}>
 					{selectedItems.map((item) => (
 						<button
 							key={item.value}
-							className={styles["tag"]}
-							onClick={() => onClose(item.value)}>
+							className={styles['tag']}
+							onClick={() => onClose(item.value)}
+						>
 							{item.label} <TagClose />
 						</button>
 					))}

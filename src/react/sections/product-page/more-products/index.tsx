@@ -1,5 +1,5 @@
-import ListingCard from "@@/react/components/cards/listing-card";
-import MainListingContainer from "@@/react/components/containers/main-listing";
+import ListingCard from '@@/react/components/cards/listing-card';
+import MainListingContainer from '@@/react/components/containers/main-listing';
 
 interface Props {
 	className?: string;
@@ -8,13 +8,14 @@ interface Props {
 const MoreProducts = ({ className }: Props) => {
 	return (
 		<MainListingContainer
-			title="Upsale products"
+			title='Upsale products'
 			qty={49}
-			link="#!"
+			link='#!'
 			hasDivider={false}
-			className={className}>
+			className={className}
+		>
 			{[...Array(4)].map((_, index) => (
-				<ListingCard key={index} id="1" />
+				<ListingCard key={index} id='1' />
 			))}
 		</MainListingContainer>
 	);

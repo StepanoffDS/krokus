@@ -1,53 +1,70 @@
+import { forwardRef, useId } from 'react';
+import { FieldError } from 'react-hook-form';
+
+import FormError from '../../ui/form-error';
+
 import styles from './input.module.scss';
 
 interface Props {
-  className?: string;
-  placeholder?: string;
-  type?: 'text' | 'password' | 'number';
-  id?: string;
+	className?: string;
+	placeholder?: string;
+	type?: 'text' | 'password' | 'number';
+	error: FieldError;
 }
 
-interface FormInputProps extends Props {
-  label?: string;
+interface LabelInputProps extends Props {
+	label?: string;
 }
 
-export const FormInput = ({
-  type = 'text',
-  placeholder,
-  id,
-  className,
-  label,
-}: FormInputProps) => {
-  return (
-    <div className={`${styles['form-group']} ${className}`}>
-      {label && (
-        <label htmlFor={id} className={styles['form-label']}>
-          {label}
-        </label>
-      )}
-      <input
-        className={styles['form-input']}
-        type={type}
-        placeholder={placeholder}
-        id={id}
-      />
-      <span className={styles['form-error']}></span>
-    </div>
-  );
-};
+export const LabelInput = forwardRef(
+	(
+		{
+			type = 'text',
+			placeholder,
+			className,
+			label,
+			error,
+			...props
+		}: LabelInputProps,
+		ref: React.ForwardedRef<HTMLInputElement>,
+	) => {
+		const id = useId();
 
-const Input = ({ className, placeholder, type = 'text', id }: Props) => {
-  return (
-    <div className={`${styles['form-group']} ${className}`}>
-      <input
-        className={styles['form-input']}
-        type={type}
-        placeholder={placeholder}
-        id={id}
-      />
-      <span className={styles['form-error']}></span>
-    </div>
-  );
-};
+		return (
+			<div className={`${styles['form-group']} ${className}`}>
+				<label htmlFor={id} className={styles['form-label']}>
+					{label}
+				</label>
+				<input
+					id={id}
+					className={styles['form-input']}
+					type={type}
+					placeholder={placeholder}
+					ref={ref}
+					{...props}
+				/>
+				{error && <FormError error={error} />}
+			</div>
+		);
+	},
+);
 
-export default Input;
+export const Input = forwardRef(
+	(
+		{ className, placeholder, type = 'text', error, ...props }: Props,
+		ref: React.ForwardedRef<HTMLInputElement>,
+	) => {
+		return (
+			<div className={`${styles['form-group']} ${className}`}>
+				<input
+					className={styles['form-input']}
+					type={type}
+					placeholder={placeholder}
+					ref={ref}
+					{...props}
+				/>
+				{error && <FormError error={error} />}
+			</div>
+		);
+	},
+);

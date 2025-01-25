@@ -1,5 +1,6 @@
-import styles from "./header-nav-btns.module.scss";
-import SearchIcon from "@@/react/components/icons/search-icon";
+import SearchIcon from '@@/react/components/icons/search-icon';
+
+import styles from './header-nav-btns.module.scss';
 
 interface Props {
 	className?: string;
@@ -7,7 +8,7 @@ interface Props {
 
 const SearchBtn = ({ className }: Props) => {
 	return (
-		<a href="#!" className={`${styles["header-nav-btn"]} ${className}`}>
+		<a href='#!' className={`${styles['header-nav-btn']} ${className}`}>
 			<SearchIcon />
 		</a>
 	);

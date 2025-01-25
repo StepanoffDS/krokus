@@ -1,4 +1,4 @@
-import ProductMain from "../sections/product-page/product-main";
+import ProductMain from '../sections/product-page/product-main';
 
 interface Props {
 	className?: string;

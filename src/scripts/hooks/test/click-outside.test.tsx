@@ -1,7 +1,8 @@
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
-import { useRef } from "react";
-import { afterEach, describe, expect, it, vi } from "vitest";
-import { useClickOutside } from "../use-click-outside";
+import { afterEach, describe, expect, it, vi } from 'vitest';
+import { cleanup, fireEvent, render, screen } from '@testing-library/react';
+import { useRef } from 'react';
+
+import useClickOutside from '../use-click-outside';
 
 const ClickOutsideComponent = ({ onOutsideClick }) => {
 	const ref = useRef(null);
@@ -10,16 +11,17 @@ const ClickOutsideComponent = ({ onOutsideClick }) => {
 	return (
 		<div
 			ref={ref}
-			style={{ width: "200px", height: "200px", backgroundColor: "lightgray" }}>
+			style={{ width: '200px', height: '200px', backgroundColor: 'lightgray' }}
+		>
 			Click outside me!
 		</div>
 	);
 };
 
-describe("ClickOutsideComponent", () => {
+describe('ClickOutsideComponent', () => {
 	afterEach(cleanup);
 
-	it("Вызов ф-ции onOutsideClick, когда происходит клик вне компонента", () => {
+	it('Вызов ф-ции onOutsideClick, когда происходит клик вне компонента', () => {
 		const handleOutsideClick = vi.fn();
 		render(<ClickOutsideComponent onOutsideClick={handleOutsideClick} />);
 
@@ -28,11 +30,11 @@ describe("ClickOutsideComponent", () => {
 		expect(handleOutsideClick).toHaveBeenCalled();
 	});
 
-	it("Ф-ция onOutsideClick не вызывает, если клик был внутри компонента", () => {
+	it('Ф-ция onOutsideClick не вызывает, если клик был внутри компонента', () => {
 		const handleOutsideClick = vi.fn();
 		render(<ClickOutsideComponent onOutsideClick={handleOutsideClick} />);
 
-		fireEvent.mouseDown(screen.getByText("Click outside me!"));
+		fireEvent.mouseDown(screen.getByText('Click outside me!'));
 
 		expect(handleOutsideClick).not.toHaveBeenCalled();
 	});

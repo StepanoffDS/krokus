@@ -1,10 +1,10 @@
-import { useEffect, useRef } from "react";
-import styles from "./product-gallery.module.scss";
-import { Options, Splide, SplideSlide } from "@splidejs/react-splide";
-import "@splidejs/splide/dist/css/splide.min.css";
+import { useEffect, useRef } from 'react';
+import { Options, Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/splide/dist/css/splide.min.css';
+import flowers from '@@/react/components/illustrations/flowers.jpg';
+import DiscountLabel from '@@/react/components/ui/discount-label';
 
-import flowers from "@@/react/components/illustrations/flowers.jpg";
-import DiscountLabel from "@@/react/components/ui/discount-label";
+import styles from './product-gallery.module.scss';
 
 interface Props {
 	className?: string;
@@ -21,16 +21,16 @@ const ProductGallery = ({ className }: Props) => {
 	}, []);
 
 	const mainOptions: Options = {
-		type: "loop",
+		type: 'loop',
 		perPage: 1,
 		perMove: 1,
-		gap: "1rem",
+		gap: '1rem',
 		pagination: false,
 		arrows: false,
 	};
 
 	const thumbsOptions: Options = {
-		gap: "20px",
+		gap: '20px',
 		cover: true,
 		arrows: false,
 		rewind: true,
@@ -42,27 +42,29 @@ const ProductGallery = ({ className }: Props) => {
 
 	const renderSlides = () => {
 		return [...Array(10)].map((_, index) => (
-			<SplideSlide key={index} className={styles["slide"]}>
+			<SplideSlide key={index} className={styles['slide']}>
 				<img src={flowers} alt={`slide ${index}`} />
 			</SplideSlide>
 		));
 	};
 
 	return (
-		<div className={`${styles["gallery"]} ${className}`}>
-			<DiscountLabel className={styles["discount"]} />
+		<div className={`${styles['gallery']} ${className}`}>
+			<DiscountLabel className={styles['discount']} />
 
 			<Splide
 				options={mainOptions}
 				ref={mainRef}
-				className={`${styles["slider"]} ${styles["slider--main"]}`}>
+				className={`${styles['slider']} ${styles['slider--main']}`}
+			>
 				{renderSlides()}
 			</Splide>
 
 			<Splide
 				options={thumbsOptions}
 				ref={thumbsRef}
-				className={`${styles["slider"]} ${styles["slider--thumb"]} slider--thumb`}>
+				className={`${styles['slider']} ${styles['slider--thumb']} slider--thumb`}
+			>
 				{renderSlides()}
 			</Splide>
 		</div>
