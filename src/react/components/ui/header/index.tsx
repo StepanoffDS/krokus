@@ -7,7 +7,7 @@ import MobileMenu from '../mobile-menu';
 import HeaderMenu from './header-menu';
 import styles from './header.module.scss';
 import LikeBtn from './header-nav-btns/like-btn';
-import HeaderBin from './header-bin';
+import HeaderCart from './header-cart';
 import SearchBtn from './header-nav-btns/search-btn';
 
 const Header = () => {
@@ -21,7 +21,7 @@ const Header = () => {
 			<div className={styles['middle']}>
 				<div className={styles['middle-btns']}>
 					<LikeBtn className={styles['middle-btn']} />
-					<HeaderBin className={styles['middle-btn']} />
+					<HeaderCart className={styles['middle-btn']} />
 				</div>
 				<a href='/' className={styles['logo']}>
 					<LogoIcon />

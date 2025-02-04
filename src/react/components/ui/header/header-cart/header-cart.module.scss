@@ -1,0 +1,109 @@
+@use '@@/styles/mixins.scss' as *;
+
+.bin {
+	position: relative;
+}
+
+.bin-btn-wrapper {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+
+	color: var(--black);
+}
+
+.bin-btn {
+	position: relative;
+	color: var(--black);
+
+	&--active {
+		background: var(--black);
+		color: var(--accent-text);
+	}
+}
+
+.bin-count {
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 16px;
+	height: 16px;
+
+	border-radius: 50%;
+
+	color: var(--accent-text);
+	background: var(--accent);
+
+	font-size: 10px;
+	font-weight: 500;
+}
+
+.bin-desc {
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 110%;
+
+	@include mediaXl {
+		display: none;
+	}
+}
+
+.bin-sum {
+	font-size: 14px;
+	font-weight: 500;
+
+	color: var(--accent);
+	line-height: 110%;
+
+	@include mediaXl {
+		display: none;
+	}
+}
+
+.cart {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+
+	position: absolute;
+	z-index: 2;
+	top: calc(100% + 6px);
+	right: calc(100% - 34px);
+
+	width: 340px;
+
+	padding: 20px;
+	border-radius: var(--border-radius-2);
+
+	border: 1px solid var(--gray-3);
+	background: var(--bg);
+
+	box-shadow: 0px 0px 10px rgba(125, 115, 105, 0.4);
+
+	@include mediaLg {
+		top: calc(100% + 12px);
+		left: calc(100% - 95px);
+	}
+}
+
+.cart-total {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	color: var(--gray-2);
+
+	font-family: var(--font-accent);
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 100%;
+}
+
+.cart-btn {
+	width: 100%;
+}

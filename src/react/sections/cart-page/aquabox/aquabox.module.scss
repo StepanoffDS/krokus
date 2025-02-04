@@ -1,0 +1,51 @@
+.aquabox {
+	display: flex;
+	gap: 40px;
+
+	padding: 20px;
+
+	background: var(--gray-1);
+}
+
+.aquabox-collage {
+	display: grid;
+	grid-template-columns: repeat(2, 100px);
+	gap: 10px;
+}
+
+.aquabox-collage img {
+	width: 100px;
+	height: 100px;
+
+	background: var(--bg);
+
+	object-fit: cover;
+	object-position: center center;
+
+	overflow: hidden;
+}
+
+.aquabox-content {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.aquabox-title {
+	max-width: 600px;
+
+	color: var(--gray-2);
+
+	font-family: var(--font-accent);
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 100%;
+}
+
+.aquabox-text {
+	color: var(--black);
+
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 180%;
+}

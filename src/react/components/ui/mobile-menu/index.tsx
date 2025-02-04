@@ -7,7 +7,7 @@ import OpenAuthPopupBtn from '@@/react/popups/auth-popups/open-auth-popup-btn';
 import CloseIcon from '../../icons/close-icon';
 import ProfileBtn from '../header/header-nav-btns/profile-btn';
 import LikeBtn from '../header/header-nav-btns/like-btn';
-import HeaderBin from '../header/header-bin';
+import HeaderCart from '../header/header-cart';
 import MenuIcon from '../../icons/menu-icon';
 import MiniLogoIcon from '../../icons/mini-logo-icon';
 import HeaderLangs from '../header/header-langs';
@@ -61,7 +61,7 @@ const MobileMenu = ({ className }: Props) => {
 						)}
 						<LikeBtn />
 
-						<HeaderBin />
+						<HeaderCart />
 						<button className={styles['menu-btn']} onClick={toggleMenu}>
 							<CloseIcon />
 						</button>

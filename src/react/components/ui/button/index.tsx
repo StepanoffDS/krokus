@@ -1,3 +1,5 @@
+import { Link } from 'react-router';
+
 import styles from './button.module.scss';
 
 interface Props {
@@ -34,12 +36,13 @@ const Button = ({
 					{children}
 				</button>
 			) : (
-				<a
-					href={href}
+				<Link
+					to={href}
 					className={`${styles['btn']} ${btnStyles[variant]} ${className}`}
+					onClick={onClick}
 				>
 					{children}
-				</a>
+				</Link>
 			)}
 		</>
 	);

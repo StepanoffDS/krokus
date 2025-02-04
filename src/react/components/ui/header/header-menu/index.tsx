@@ -2,7 +2,7 @@ import { formatTel } from '@@/scripts/helpers/utils';
 import OpenAuthPopupBtn from '@@/react/popups/auth-popups/open-auth-popup-btn';
 import { tels } from '@@/constants/company-info';
 
-import HeaderBin from '../header-bin';
+import HeaderCart from '../header-cart';
 import HeaderLangs from '../header-langs';
 import SearchBtn from '../header-nav-btns/search-btn';
 import ProfileBtn from '../header-nav-btns/profile-btn';
@@ -41,7 +41,7 @@ const HeaderMenu = () => {
 						)}
 						<LikeBtn />
 
-						<HeaderBin />
+						<HeaderCart />
 
 						<div className={styles['mobile-menu']}>
 							<MobileMenu />

@@ -6,16 +6,17 @@ interface Props {
 	className?: string;
 	qty?: number;
 	link: string;
+	text?: string;
 }
 
-const BtnMore = ({ className, qty, link }: Props) => {
+const BtnMore = ({ className, qty, link, text = 'Skatīt visus' }: Props) => {
 	return (
 		<Button
 			href={link}
 			className={`${styles['btn-more']} ${className}`}
 			variant='outline'
 		>
-			Skatīt visus{' '}
+			{text}
 			{qty && <span className={styles['btn-more-count']}>{qty}</span>}
 		</Button>
 	);

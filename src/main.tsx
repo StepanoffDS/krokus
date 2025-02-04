@@ -14,15 +14,40 @@ import ProfileHistoryPage from './react/pages/profile/profile-history-page.tsx';
 import ProfileFeedbacksPage from './react/pages/profile/profile-feedbacks-page.tsx';
 import ProfilePhotoFeedbacksPage from './react/pages/profile/profile-photo-feedbacks-page.tsx';
 import ProfileClientSupportPage from './react/pages/profile/profile-client-support-page.tsx';
+import CartPage from './react/pages/cart/cart-page.tsx';
+import PaymentPage from './react/pages/cart/payment-page.tsx';
+import CheckoutPage from './react/pages/cart/checkout-page.tsx';
+import ConfirmationPage from './react/pages/cart/confirmation-page.tsx';
+import ScrollToTop from './react/components/ui/scroll-to-top/index.tsx';
+import PaymentStatusPage from './react/pages/cart/payment-status-page.tsx';
 
 createRoot(document.getElementById('root')!).render(
 	<StrictMode>
 		<BrowserRouter>
+			<ScrollToTop />
 			<Routes>
 				<Route element={<MainContainer />}>
 					<Route index element={<HomePage />} />
+
 					<Route path='/category/:slug' element={<CategoryPage />} />
 					<Route path='/product/:slug' element={<ProductPage />} />
+
+					{/* CART */}
+					<Route path={routes.cart}>
+						<Route index element={<CartPage />} />
+						<Route path={routes.cartCheckout} element={<CheckoutPage />} />
+						<Route
+							path={routes.cartConfirmation}
+							element={<ConfirmationPage />}
+						/>
+						<Route path={routes.cartPayment} element={<PaymentPage />} />
+						<Route
+							path={routes.cartPaymentStatus}
+							element={<PaymentStatusPage />}
+						/>
+					</Route>
+
+					{/* PROFILE */}
 					<Route path={routes.profile} element={<ProfileContainer />}>
 						<Route
 							path={routes.profile}

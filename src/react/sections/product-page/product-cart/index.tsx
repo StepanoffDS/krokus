@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import Minus from '@@/react/components/icons/minus';
-import Plus from '@@/react/components/icons/plus';
 import Button from '@@/react/components/ui/button';
 import LikeIcon from '@@/react/components/icons/like-icon';
+import ProductCartPopup from '@@/react/popups/product-card-popup';
+import CartQtyBtn from '@@/react/components/inputs/cart-qty-btn';
 
 import styles from './product-cart.module.scss';
 
@@ -13,52 +13,21 @@ interface Props {
 const ProductCart = ({ className }: Props) => {
 	const [qty, setQty] = useState(0);
 	const [isFav, setIsFav] = useState(false);
-
-	const minusQty = () => {
-		if (qty > 0) {
-			setQty((prev) => prev - 1);
-		} else {
-			setQty(0);
-		}
-	};
-
-	const plusQty = () => {
-		setQty((prev) => prev + 1);
-	};
+	const [isOpen, setIsOpen] = useState(false);
 
 	const toggleFav = () => setIsFav((prev) => !prev);
 
 	return (
 		<section className={`${styles['cart']} ${className}`}>
 			<div className={styles['cart-info']}>
-				<div className={styles['cart-counter']}>
-					<button
-						className={`${styles['cart-btn']} ${styles['cart-btn--add']}`}
-						onClick={minusQty}
-						disabled={qty === 0}
-					>
-						<Minus />
-					</button>
-					<input
-						type='number'
-						className={styles['cart-qty']}
-						placeholder='0'
-						value={qty}
-					/>
-					<button
-						className={`${styles['cart-btn']} ${styles['cart-btn--minus']}`}
-						onClick={plusQty}
-					>
-						<Plus />
-					</button>
-				</div>
+				<CartQtyBtn qty={qty} setQty={setQty} />
 				<div className={styles['prices']}>
 					<span className={styles['price-now']}>24,99 €</span>
 					<span className={styles['price-old']}>29,99 €</span>
 				</div>
 			</div>
 			<div className={styles['cart-actions']}>
-				<Button className={styles['btn-add']}>Pievienot grozam</Button>
+				<ProductCartPopup isOpen={isOpen} setIsOpen={setIsOpen} />
 				<Button
 					className={`${styles['btn-like']}`}
 					variant={isFav ? 'primary' : 'outline'}

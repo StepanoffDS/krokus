@@ -1,0 +1,17 @@
+.qty {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+	padding: 2px 5px;
+	width: fit-content;
+
+	border: 1px solid var(--gray-5);
+	border-radius: 4px;
+
+	color: var(--black);
+
+	font-size: 12px;
+	font-weight: 500;
+	line-height: 120%;
+}

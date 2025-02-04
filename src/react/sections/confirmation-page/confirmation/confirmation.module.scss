@@ -1,0 +1,17 @@
+.confirmation {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+
+	margin-bottom: 40px;
+}
+
+.radio-text a {
+	color: var(--black);
+
+	text-decoration: underline;
+}
+
+.btn {
+	margin-left: auto;
+}

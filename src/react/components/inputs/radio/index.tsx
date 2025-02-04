@@ -6,7 +6,7 @@ import styles from './radio.module.scss';
 interface Props {
 	className?: string;
 	children: string | React.ReactNode;
-	type?: 'normal' | 'big';
+	type?: 'normal' | 'big' | 'dark';
 	error?: FieldError;
 }
 

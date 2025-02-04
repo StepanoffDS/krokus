@@ -5,177 +5,203 @@
 @use './mixins.scss' as *;
 
 :root {
-  background-color: var(--bg);
-  color: var(--black);
+	background-color: var(--bg);
+	color: var(--black);
 
-  font-family: var(--font);
-  line-height: 1.5;
-  font-weight: 400;
+	font-family: var(--font);
+	line-height: 1.5;
+	font-weight: 400;
 
-  color-scheme: light dark;
+	color-scheme: light dark;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-width: 320px;
-  min-height: 100vh;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	min-width: 320px;
+	min-height: 100vh;
+
+	color: var(--black);
 }
 
 a {
-  color: inherit;
-  text-decoration: inherit;
-  transition: var(--transition);
+	color: inherit;
+	text-decoration: inherit;
+	transition: var(--transition);
 }
 
 button {
-  border: none;
-  background: transparent;
-  font-family: inherit;
-  cursor: pointer;
+	border: none;
+	background: transparent;
+	font-family: inherit;
+	cursor: pointer;
 }
 
 summary {
-  list-style-type: none; /* Firefox */
+	list-style-type: none; /* Firefox */
 }
 
 summary::-webkit-details-marker {
-  display: none; /* Chrome */
+	display: none; /* Chrome */
 }
 
 input:not([type='range']),
 select {
-  &:focus {
-    outline: 2px solid var(--gold);
-  }
+	&:focus {
+		outline: 2px solid var(--gold);
+	}
 }
 
 .overlay {
-  &::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--black);
-    opacity: 0.6;
-    z-index: 3;
-  }
+	&::before {
+		content: '';
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: var(--black);
+		opacity: 0.6;
+		z-index: 3;
+	}
 }
 
 .custom-scrollbar {
-  --scrollbar-width: 25px;
+	--scrollbar-width: 25px;
 
-  scrollbar-width: thin;
+	scrollbar-width: thin;
 }
 
 .overflow-hidden {
-  overflow-y: hidden;
+	overflow-y: hidden;
 }
 
 .pagination {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 10px !important;
-  bottom: 4% !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	gap: 10px !important;
+	bottom: 4% !important;
 
-  button {
-    width: 5px !important;
-    height: 5px !important;
-    margin: 0 !important;
-    opacity: 1 !important;
-    transform: scale(1) !important;
-    background: var(--bg) !important;
-  }
+	button {
+		width: 5px !important;
+		height: 5px !important;
+		margin: 0 !important;
+		opacity: 1 !important;
+		transform: scale(1) !important;
+		background: var(--bg) !important;
+	}
 
-  &-1 {
-    button {
-      &.is-active {
-        background: var(--gold) !important;
-      }
-    }
+	&-1 {
+		button {
+			&.is-active {
+				background: var(--gold) !important;
+			}
+		}
 
-    @include mediaMd {
-      bottom: 6% !important;
-    }
-  }
+		@include mediaMd {
+			bottom: 6% !important;
+		}
+	}
 
-  &-2 {
-    bottom: 6%;
-    button {
-      &.is-active {
-        background: var(--accent) !important;
-      }
-    }
-  }
+	&-2 {
+		bottom: 6%;
+		button {
+			&.is-active {
+				background: var(--accent) !important;
+			}
+		}
+	}
 
-  &-3 {
-    bottom: -6% !important;
-    button {
-      background: var(--gold) !important;
-      &.is-active {
-        background: var(--accent) !important;
-      }
-    }
+	&-3 {
+		bottom: -6% !important;
+		button {
+			background: var(--gold) !important;
+			&.is-active {
+				background: var(--accent) !important;
+			}
+		}
 
-    @include mediaMd {
-      bottom: -10% !important;
-    }
-  }
+		@include mediaMd {
+			bottom: -10% !important;
+		}
+	}
 
-  &-4 {
-    position: relative;
-    bottom: -11% !important;
-    button {
-      background: var(--gray-2) !important;
-      &.is-active {
-        background: var(--accent) !important;
-      }
-    }
+	&-4 {
+		position: relative;
+		bottom: -11% !important;
+		button {
+			background: var(--gray-2) !important;
+			&.is-active {
+				background: var(--accent) !important;
+			}
+		}
 
-    @include mediaMd {
-      bottom: -9% !important;
-    }
-  }
+		@include mediaMd {
+			bottom: -9% !important;
+		}
+	}
 }
 
 .container {
-  margin: 0 auto;
-  padding: 0 80px;
-  max-width: calc(1610px + 160px);
+	margin: 0 auto;
+	padding: 0 80px;
+	max-width: calc(1610px + 160px);
 
-  @include mediaXl {
-    padding: 0 40px;
-  }
+	@include mediaXl {
+		padding: 0 40px;
+	}
 
-  @include mediaMd {
-    padding: 0 20px;
-  }
+	@include mediaMd {
+		padding: 0 20px;
+	}
 }
 .slider--thumb {
-  .splide__slide {
-    opacity: 0.4;
-    border: none !important;
-    &.is-active {
-      opacity: 1;
-    }
-  }
+	.splide__slide {
+		opacity: 0.4;
+		border: none !important;
+		&.is-active {
+			opacity: 1;
+		}
+	}
 }
 
 .no-resize {
-  resize: none !important;
+	resize: none !important;
+}
+
+.date-picker {
+	padding: 14px;
+
+	border-radius: var(--border-radius);
+	border: 1px solid var(--black);
+
+	background: transparent;
+	color: var(--black);
+
+	font-family: var(--font);
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 160%;
+
+	&::placeholder {
+		color: var(--black);
+
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 160%;
+		opacity: 0.4;
+	}
 }

@@ -1,0 +1,70 @@
+.popup-main {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+
+	padding: 60px 40px 40px;
+}
+
+.popup-title {
+	color: var(--gray-2);
+
+	font-family: var(--font-accent);
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 100%;
+}
+
+.postcards {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 10px;
+}
+
+.postcards__item {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+
+	padding: 10px;
+
+	border-radius: var(--border-radius-2);
+	border: 1px solid var(--gray-1);
+
+	background: var(--gray-1);
+
+	&--active {
+		border: 1px solid var(--accent);
+	}
+}
+
+.postcards__item-img {
+	width: 50px;
+	height: 50px;
+	object-fit: cover;
+	object-position: center center;
+	background: var(--bg);
+}
+
+.postcards__item-title {
+	color: var(--black);
+
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 100%;
+}
+
+.postcards__item-price {
+	margin-left: auto;
+
+	color: var(--black);
+
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 100%;
+}
+
+.popup-buttons {
+	display: flex;
+	justify-content: space-between;
+}
