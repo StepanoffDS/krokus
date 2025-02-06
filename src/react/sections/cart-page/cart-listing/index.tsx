@@ -26,11 +26,12 @@ const CartListing = () => {
 					bonusQty={1}
 					productImg={product}
 					bonusImg={product}
+					bonusName='Product name goes here'
 				/>
 			</section>
-			<section className={styles['checkout-btn']}>
-				<Button href={routes.cartCheckout}>Proceed to checkout 89,99 €</Button>
-			</section>
+			<Button href={routes.cartCheckout} className={styles['checkout-btn']}>
+				Proceed to checkout 89,99 €
+			</Button>
 		</div>
 	);
 };

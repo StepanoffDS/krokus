@@ -30,6 +30,8 @@ const options3 = [
 	{ value: 'Sirds', label: 'Sirds' },
 ];
 
+// TODO: сделать форму фильтров
+
 const CategoryParams = () => {
 	return (
 		<AsideContainer

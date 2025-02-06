@@ -52,7 +52,9 @@ const AddAquaboxPopup = ({ className, isOpen, setIsOpen }: IPopup<boolean>) => {
 							</button>
 						))}
 					</div>
-					{activeAquabox === 5 && <Textarea resize='none' rows={5} />}
+					{activeAquabox === 5 && (
+						<Textarea resize='none' rows={5} error={undefined} />
+					)}
 					<div className={styles['popup-buttons']}>
 						<Button variant='outline' onClick={handleClick}>
 							Cancel

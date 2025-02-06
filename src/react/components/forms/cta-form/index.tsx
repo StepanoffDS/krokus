@@ -55,7 +55,12 @@ const CtaForm = ({ className }: Props) => {
 				control={control}
 				name='isCheck'
 				render={({ field }) => (
-					<Radio className={styles['radio']} error={errors.isCheck} {...field}>
+					<Radio
+						className={styles['radio']}
+						error={errors.isCheck}
+						{...field}
+						value={field.value ? 'true' : 'false'}
+					>
 						<span>
 							Apstiprinu, ka esmu iepazinies ar{' '}
 							<a href='#!'>Privātumu Politiku</a>

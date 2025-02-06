@@ -43,7 +43,7 @@ const Payment = () => {
 					</div>
 					<div className={styles['info']}>
 						<h3 className={styles['title']}>Cash on delivery</h3>
-						<p className={styles['text']}>
+						<p className={styles['desc']}>
 							You have indicated that you'd pick up the order yourself. You can
 							pay for the order when you pick it up.
 						</p>

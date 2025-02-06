@@ -204,4 +204,21 @@ select {
 		line-height: 160%;
 		opacity: 0.4;
 	}
+
+	&.date-error {
+		border: 2px solid var(--error);
+	}
+}
+
+.error-text {
+	color: var(--error);
+}
+
+.input-time {
+	width: fit-content !important;
+	position: relative;
+}
+
+.react-datepicker__day--selected {
+	background-color: var(--gray-2) !important;
 }

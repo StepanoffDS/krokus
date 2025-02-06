@@ -14,12 +14,14 @@ const PaymentStatus = ({ className }: Props) => {
 				<div className='container'>
 					<div className={className}>
 						<div className={styles['inner']}>
-							<h1 className='title-2'>Success</h1>
+							<h1 className={`title-2 ${styles['title']}`}>Success</h1>
 							<p className='desc'>Thank you! your order is successfully set.</p>
 							<p className='desc'>
 								Order number: <span className={styles['accent']}>08798740</span>
 							</p>
-							<Button href={routes.cart}>View my orders</Button>
+							<Button href={routes.cart} className={styles['btn']}>
+								View my orders
+							</Button>
 						</div>
 					</div>
 				</div>
@@ -28,9 +30,13 @@ const PaymentStatus = ({ className }: Props) => {
 				<div className='container'>
 					<div className={className}>
 						<div className={styles['inner']}>
-							<h1 className='title-2'>Something went wrong</h1>
+							<h1 className={`title-2 ${styles['title']}`}>
+								Something went wrong
+							</h1>
 							<p className='desc'>Please try again later</p>
-							<Button href={routes.home}>Homepage</Button>
+							<Button href={routes.home} className={styles['btn']}>
+								Homepage
+							</Button>
 						</div>
 					</div>
 				</div>

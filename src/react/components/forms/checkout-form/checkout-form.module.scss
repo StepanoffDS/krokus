@@ -1,7 +1,13 @@
+@use '@@/styles/mixins.scss' as *;
+
 .form {
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
+
+	@include mediaMd {
+		margin-bottom: 40px;
+	}
 }
 
 .section-form {
@@ -14,12 +20,24 @@
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 10px;
+
+	@include media($prelg) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@include mediaMd {
+		grid-template-columns: 1fr;
+	}
 }
 
 .address-col {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	gap: 10px;
+
+	@include mediaMd {
+		grid-template-columns: 1fr;
+	}
 }
 
 .address-radios {
@@ -33,10 +51,33 @@
 	align-items: center;
 	gap: 10px;
 
+	position: relative;
+
 	overflow-y: hidden;
 	overflow-x: scroll;
 
 	padding-bottom: 8px;
+
+	cursor: all-scroll;
+
+	// scrollbar-width: thin;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	&::after {
+		content: '';
+
+		position: absolute;
+		bottom: 0;
+		top: 0;
+		right: 0;
+
+		width: 40px;
+
+		background: linear-gradient(270deg, white, transparent);
+	}
 }
 
 .schedule__item {
@@ -52,7 +93,14 @@
 
 	background: var(--gray-1);
 
+	user-select: none;
+
 	&--active {
+		border: 1px solid var(--accent);
+	}
+
+	&:focus-visible {
+		outline: 2px solid var(--accent);
 		border: 1px solid var(--accent);
 	}
 }
@@ -116,4 +164,13 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+
+	@include mediaMd {
+		flex-direction: column-reverse;
+		gap: 10px;
+
+		> * {
+			width: 100%;
+		}
+	}
 }

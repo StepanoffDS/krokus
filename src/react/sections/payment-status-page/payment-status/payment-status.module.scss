@@ -1,3 +1,5 @@
+@use '@@/styles/mixins.scss' as *;
+
 .inner {
 	display: flex;
 	flex-direction: column;
@@ -9,4 +11,14 @@
 
 .accent {
 	color: var(--accent);
+}
+
+.title {
+	text-align: center;
+}
+
+.btn {
+	@include mediaSm {
+		width: 100%;
+	}
 }

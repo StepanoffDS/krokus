@@ -91,7 +91,7 @@ export const NAVS = [
 export const scheduleDeliver = [
 	{
 		id: 1,
-		time: '09:00 - 20:00',
+		time: '17:00 - 19:00',
 		type: 'Regular',
 		price: '0,00 €',
 	},

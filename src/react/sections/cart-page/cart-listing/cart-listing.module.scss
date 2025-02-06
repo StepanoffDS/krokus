@@ -1,12 +1,18 @@
+@use '@@/styles/mixins.scss' as *;
+
 .cart-listing {
 	margin-bottom: 40px;
 }
 
 .checkout-btn {
 	display: flex;
-	justify-content: flex-end;
 
 	margin-top: 20px;
+	margin-left: auto;
+
+	@include mediaMd {
+		width: 100%;
+	}
 }
 
 .product-extra {

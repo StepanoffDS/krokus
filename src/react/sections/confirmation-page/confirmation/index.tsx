@@ -1,11 +1,11 @@
 import product from '@@/react/components/illustrations/product.png';
 import ConfirmationProductCard from '@@/react/components/cards/confirmation-product-card';
 import CartProductContainer from '@@/react/components/containers/cart-product-container';
-
-import styles from './confirmation.module.scss';
 import Radio from '@@/react/components/inputs/radio';
 import Button from '@@/react/components/ui/button';
 import { routes } from '@@/constants/routing';
+
+import styles from './confirmation.module.scss';
 
 const Confirmation = () => {
 	return (
@@ -32,7 +32,7 @@ const Confirmation = () => {
 				/>
 				<ConfirmationProductCard title='Aquabox' img={product} pcs={1} />
 			</CartProductContainer>
-			<div>
+			<div className={styles['radio-section']}>
 				<Radio type='dark'>
 					<span className={styles['radio-text']}>
 						I have read and agree with the <a href='#!'>delivery rules</a> and{' '}

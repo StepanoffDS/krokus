@@ -1,3 +1,5 @@
+@use '@@/styles/mixins.scss' as *;
+
 .product-img {
 	width: 80px;
 	height: 80px;
@@ -7,21 +9,35 @@
 
 .product-inner {
 	display: grid;
-	grid-template-columns: 80px 1fr;
+	grid-template-columns: 80px 1fr auto;
 	gap: 20px;
 	align-items: center;
 
 	padding-bottom: 20px;
+
+	@include mediaXl {
+		grid-template-columns: 80px 1fr auto;
+	}
+
+	@include mediaLg {
+		grid-template-columns: 80px 1fr;
+		align-items: start;
+	}
 }
 
-.product-info {
+.product-details {
 	display: grid;
-	grid-template-columns: 1fr 150px 150px 150px;
-	align-items: center;
+	grid-template-columns: 70px 150px 150px;
 	gap: 20px;
+	align-items: center;
 
-	&--extra {
-		grid-template-columns: 1fr 150px 150px 150px;
+	@include mediaXl {
+		grid-template-columns: 70px 90px 90px;
+	}
+
+	@include mediaLg {
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-column: 1/-1;
 	}
 }
 
@@ -47,6 +63,14 @@
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+
+	@include mediaLg {
+		white-space: normal;
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
 }
 
 .product-name--main {
@@ -58,6 +82,10 @@
 	flex-direction: column;
 	align-items: flex-end;
 	gap: 5px;
+
+	@include mediaLg {
+		align-items: flex-start;
+	}
 }
 
 .product-detail-title {

@@ -1,9 +1,18 @@
+@use '@@/styles/mixins.scss' as *;
+
 .header {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	gap: 20px;
 
 	margin-top: 40px;
+
+	@include mediaLg {
+		flex-direction: column;
+		align-items: flex-start;
+		margin-top: 20px;
+	}
 }
 
 .breadcrumbs {
@@ -26,4 +35,10 @@
 
 .content {
 	margin-top: 20px;
+}
+
+.title {
+	@include mediaLg {
+		font-size: 35px;
+	}
 }

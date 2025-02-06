@@ -1,3 +1,5 @@
+@use '@@/styles/mixins.scss' as *;
+
 .product-img {
 	width: 80px;
 	height: 80px;
@@ -7,21 +9,45 @@
 
 .product-inner {
 	display: grid;
-	grid-template-columns: 80px 1fr 180px;
+	grid-template-columns: 80px 1fr 160px 150px 150px 180px;
 	gap: 20px;
 	align-items: center;
 
 	padding-bottom: 20px;
+
+	@include mediaXxl {
+		grid-template-columns: 80px 1fr 160px 80px 80px 180px;
+	}
+
+	@include mediaXl {
+		grid-template-columns: 80px 80px 1fr 1fr;
+		align-items: start;
+	}
+
+	@include mediaLg {
+		grid-template-columns: 80px 80px 1fr;
+	}
 }
 
-.product-info {
-	display: grid;
-	grid-template-columns: 1fr 160px 150px 150px;
-	align-items: center;
-	gap: 20px;
+.product-inner--extra {
+	grid-template-columns: 80px 1fr 150px 150px 180px;
 
-	&--extra {
-		grid-template-columns: 1fr 150px 150px;
+	@include mediaXxl {
+		grid-template-columns: 80px 1fr 80px 80px 180px;
+
+		&--extra {
+			grid-template-columns: 80px 1fr 80px 80px 180px;
+		}
+	}
+
+	@include mediaXl {
+		grid-template-columns: 80px 80px 1fr;
+		align-items: start;
+
+		.product-actions {
+			grid-row: 2;
+			grid-column: 3/4;
+		}
 	}
 }
 
@@ -34,6 +60,10 @@
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+
+	@include mediaXl {
+		grid-column: 2/4;
+	}
 }
 
 .product-name {
@@ -47,6 +77,14 @@
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+
+	@include mediaXl {
+		white-space: normal;
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
 }
 
 .product-name--main {
@@ -58,6 +96,56 @@
 	flex-direction: column;
 	align-items: flex-end;
 	gap: 5px;
+
+	@include mediaXl {
+		grid-row: 2;
+		align-items: flex-start;
+	}
+}
+
+.product-qty-btn {
+	@include mediaXxl {
+		width: 160px;
+	}
+
+	@include mediaXl {
+		margin-left: auto;
+	}
+
+	@include mediaLg {
+		grid-row: 2;
+		grid-column: 3/4;
+	}
+
+	@include mediaMd {
+		width: 150px;
+	}
+}
+
+.product-add-postcard {
+	@include mediaLg {
+		width: 100%;
+
+		button {
+			width: 100%;
+		}
+	}
+}
+
+.product-actions {
+	display: flex;
+	justify-content: flex-end;
+	gap: 20px;
+
+	@include mediaXl {
+		grid-row: 2;
+		grid-column: 4 / 5;
+	}
+
+	@include mediaLg {
+		grid-row: 3;
+		grid-column: 1/-1;
+	}
 }
 
 .product-detail-title {
@@ -104,10 +192,4 @@
 		background: var(--accent);
 		color: var(--accent-text);
 	}
-}
-
-.product-actions {
-	display: flex;
-	justify-content: flex-end;
-	gap: 20px;
 }

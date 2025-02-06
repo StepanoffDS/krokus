@@ -1,9 +1,15 @@
+@use '@@/styles/mixins.scss' as *;
+
 .popup-main {
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
 
 	padding: 60px 40px 40px;
+
+	@include mediaMd {
+		padding: 60px 20px 40px;
+	}
 }
 
 .popup-title {
@@ -19,6 +25,14 @@
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	gap: 10px;
+
+	@include mediaLg {
+		grid-template-columns: 390px;
+	}
+
+	@include mediaMd {
+		grid-template-columns: 1fr;
+	}
 }
 
 .postcards__item {
@@ -52,6 +66,8 @@
 	font-size: 16px;
 	font-weight: 500;
 	line-height: 100%;
+
+	text-align: left;
 }
 
 .postcards__item-price {
@@ -67,4 +83,9 @@
 .popup-buttons {
 	display: flex;
 	justify-content: space-between;
+
+	@include mediaMd {
+		flex-direction: column-reverse;
+		gap: 10px;
+	}
 }

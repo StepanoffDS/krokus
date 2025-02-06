@@ -19,7 +19,7 @@ const CartContainer = ({ className, children, title }: Props) => {
 		<div className={className}>
 			<div className='container'>
 				<header className={styles['header']}>
-					<h2 className={'title-2'}>{title}</h2>
+					<h2 className={`title-2 ${styles['title']}`}>{title}</h2>
 					<div className={styles['breadcrumbs']}>
 						<p
 							className={`${styles['breadcrumbs-item']} ${styles['breadcrumbs-item--active']}`}
@@ -29,10 +29,10 @@ const CartContainer = ({ className, children, title }: Props) => {
 						<BreadcrumbArrow />
 						<p
 							className={`${styles['breadcrumbs-item']} ${
-								location.pathname === routes.cartCheckout ||
-								location.pathname === routes.cartConfirmation ||
-								(location.pathname === routes.cartPayment &&
-									styles['breadcrumbs-item--active'])
+								(location.pathname === routes.cartCheckout ||
+									location.pathname === routes.cartConfirmation ||
+									location.pathname === routes.cartPayment) &&
+								styles['breadcrumbs-item--active']
 							}`}
 						>
 							Checkout

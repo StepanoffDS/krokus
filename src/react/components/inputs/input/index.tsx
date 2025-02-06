@@ -8,7 +8,7 @@ import styles from './input.module.scss';
 interface Props {
 	className?: string;
 	placeholder?: string;
-	type?: 'text' | 'password' | 'number';
+	type?: 'text' | 'password' | 'number' | 'time';
 	error: FieldError;
 }
 

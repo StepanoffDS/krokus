@@ -14,21 +14,29 @@
 		border-radius: var(--border-radius);
 		background: transparent;
 	}
+}
 
-	&.big {
-		--size: 24px;
-		--margin-right: 14px;
+.form-group.big {
+	--size: 24px;
+	--margin-right: 14px;
 
-		svg {
-			width: calc(var(--size) * 0.7);
-			position: absolute;
-			left: calc(var(--size) * 0.15);
-		}
+	svg {
+		width: calc(var(--size) * 0.7);
+		position: absolute;
+		left: calc(var(--size) * 0.15);
 	}
+}
 
-	&.dark {
-		--size: 29px;
-		--margin-right: 16px;
+.form-group.dark {
+	--size: 29px;
+	--margin-right: 16px;
+
+	input:checked ~ svg {
+		height: var(--size);
+		width: var(--size);
+		top: 0;
+		left: 0;
+		border-radius: var(--border-radius);
 	}
 }
 
@@ -49,7 +57,8 @@
 	width: 1px;
 }
 
-.form-group input[value='true'] ~ svg {
+// .form-group input[value='true'] ~ svg,
+.form-group input:checked ~ svg {
 	height: calc(var(--size) * 0.6);
 	color: var(--accent);
 }

@@ -5,11 +5,11 @@ import CartPopupItem from '@@/react/components/ui/cart-popup-item';
 import { postcards } from '@@/constants/company-info';
 import Textarea from '@@/react/components/inputs/input/textarea';
 import { IPopup } from '@@/@types';
+import Edit from '@@/react/components/icons/edit';
 
 import PopupContainer from '../popup-container';
 
 import styles from './add-postcard-popup.module.scss';
-import Edit from '@@/react/components/icons/edit';
 
 interface Props extends IPopup<boolean> {
 	isEdit?: boolean;
@@ -66,7 +66,9 @@ const AddPostcardPopup = ({
 							</button>
 						))}
 					</div>
-					{activePostcard === 5 && <Textarea resize='none' rows={5} />}
+					{activePostcard === 5 && (
+						<Textarea resize='none' rows={5} error={undefined} />
+					)}
 					<div className={styles['popup-buttons']}>
 						<Button variant='outline' onClick={handleClick}>
 							Cancel
