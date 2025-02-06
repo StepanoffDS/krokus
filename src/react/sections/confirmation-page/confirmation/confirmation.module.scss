@@ -8,7 +8,9 @@
 }
 
 .radio-text {
-	line-height: 120%;
+	@include mediaSm {
+		line-height: 120%;
+	}
 }
 
 .radio-text a {

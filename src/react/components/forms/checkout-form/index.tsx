@@ -50,7 +50,7 @@ const CheckoutForm = () => {
 	const checkoutSubmit = async (data: CheckoutSchemaType) => {
 		try {
 			console.log(data);
-			navigate(routes.cartConfirmation);
+			await navigate(routes.cartConfirmation);
 		} catch (error) {
 			console.error(error);
 		}
