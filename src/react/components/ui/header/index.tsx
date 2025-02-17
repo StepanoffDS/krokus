@@ -9,6 +9,7 @@ import styles from './header.module.scss';
 import LikeBtn from './header-nav-btns/like-btn';
 import HeaderCart from './header-cart';
 import SearchBtn from './header-nav-btns/search-btn';
+import Search from './search';
 
 const Header = () => {
 	const location = useLocation();
@@ -18,6 +19,9 @@ const Header = () => {
 	return (
 		<header className={styles['header']}>
 			<HeaderMenu />
+
+			<Search type='desktop' />
+
 			<div className={styles['middle']}>
 				<div className={styles['middle-btns']}>
 					<LikeBtn className={styles['middle-btn']} />
@@ -31,6 +35,7 @@ const Header = () => {
 					<MobileMenu />
 				</div>
 			</div>
+
 			<nav className={styles['nav']}>
 				{NAVS[1].links.map(({ name, link }) => (
 					<a
@@ -44,6 +49,8 @@ const Header = () => {
 					</a>
 				))}
 			</nav>
+
+			<Search type='mobile' />
 		</header>
 	);
 };

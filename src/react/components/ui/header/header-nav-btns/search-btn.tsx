@@ -1,3 +1,5 @@
+import { useComponentsStore } from '@@/store';
+import { useShallow } from 'zustand/shallow';
 import SearchIcon from '@@/react/components/icons/search-icon';
 
 import styles from './header-nav-btns.module.scss';
@@ -7,10 +9,22 @@ interface Props {
 }
 
 const SearchBtn = ({ className }: Props) => {
+	const { setIsOpen, isOpen } = useComponentsStore(
+		useShallow((state) => ({
+			isOpen: state.isOpenSearch,
+			setIsOpen: state.setIsOpenSearch,
+		})),
+	);
+
 	return (
-		<a href='#!' className={`${styles['header-nav-btn']} ${className}`}>
+		<button
+			className={`${styles['header-nav-btn']} ${
+				isOpen && styles['header-nav-btn--open']
+			} ${className}`}
+			onClick={() => setIsOpen(!isOpen)}
+		>
 			<SearchIcon />
-		</a>
+		</button>
 	);
 };
 

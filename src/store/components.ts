@@ -4,6 +4,9 @@ import { devtools } from 'zustand/middleware';
 interface Props {
 	isAuthPopupOpen: boolean;
 	setIsAuthPopupOpen: (value: boolean) => void;
+
+	isOpenSearch: boolean;
+	setIsOpenSearch: (value: boolean) => void;
 }
 
 const createComponentsSlice: StateCreator<
@@ -14,6 +17,9 @@ const createComponentsSlice: StateCreator<
 > = (set) => ({
 	isAuthPopupOpen: false,
 	setIsAuthPopupOpen: (value) => set({ isAuthPopupOpen: value }),
+
+	isOpenSearch: false,
+	setIsOpenSearch: (value) => set({ isOpenSearch: value }),
 });
 
 export const useComponentsStore = create<Props>()(

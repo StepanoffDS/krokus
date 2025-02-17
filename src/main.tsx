@@ -1,5 +1,5 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router';
-import { StrictMode } from 'react';
+import { lazy, StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 
 import './styles/global.scss';
@@ -9,17 +9,37 @@ import MainContainer from './react/components/containers/main-container.tsx';
 import ProductPage from './react/pages/product-page.tsx';
 import ProfileContainer from './react/components/containers/profile-container/index.tsx';
 import { routes } from './constants/routing.ts';
-import ProfileInfoPage from './react/pages/profile/profile-info-page.tsx';
-import ProfileHistoryPage from './react/pages/profile/profile-history-page.tsx';
-import ProfileFeedbacksPage from './react/pages/profile/profile-feedbacks-page.tsx';
-import ProfilePhotoFeedbacksPage from './react/pages/profile/profile-photo-feedbacks-page.tsx';
-import ProfileClientSupportPage from './react/pages/profile/profile-client-support-page.tsx';
-import CartPage from './react/pages/cart/cart-page.tsx';
-import PaymentPage from './react/pages/cart/payment-page.tsx';
-import CheckoutPage from './react/pages/cart/checkout-page.tsx';
-import ConfirmationPage from './react/pages/cart/confirmation-page.tsx';
 import ScrollToTop from './react/components/ui/scroll-to-top/index.tsx';
-import PaymentStatusPage from './react/pages/cart/payment-status-page.tsx';
+
+const ProfileInfoPage = lazy(
+	() => import('./react/pages/profile/profile-info-page.tsx'),
+);
+
+const ProfileHistoryPage = lazy(
+	() => import('./react/pages/profile/profile-history-page.tsx'),
+);
+
+const ProfileFeedbacksPage = lazy(
+	() => import('./react/pages/profile/profile-feedbacks-page.tsx'),
+);
+
+const ProfilePhotoFeedbacksPage = lazy(
+	() => import('./react/pages/profile/profile-photo-feedbacks-page.tsx'),
+);
+
+const ProfileClientSupportPage = lazy(
+	() => import('./react/pages/profile/profile-client-support-page.tsx'),
+);
+
+const CartPage = lazy(() => import('./react/pages/cart/cart-page.tsx'));
+const PaymentPage = lazy(() => import('./react/pages/cart/payment-page.tsx'));
+const CheckoutPage = lazy(() => import('./react/pages/cart/checkout-page.tsx'));
+const ConfirmationPage = lazy(
+	() => import('./react/pages/cart/confirmation-page.tsx'),
+);
+const PaymentStatusPage = lazy(
+	() => import('./react/pages/cart/payment-status-page.tsx'),
+);
 
 createRoot(document.getElementById('root')!).render(
 	<StrictMode>
