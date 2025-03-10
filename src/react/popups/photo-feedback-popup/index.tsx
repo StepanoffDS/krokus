@@ -7,6 +7,7 @@ import ProductInfoPopup from '@@/react/components/ui/product-info-popup';
 import PopupContainer from '../popup-container';
 
 import styles from './photo-feedback-popup.module.scss';
+import { createPortal } from 'react-dom';
 
 interface Props {
 	id: number;
@@ -23,26 +24,29 @@ const PhotoFeedbackPopup = ({ id, className, isOpen, setIsOpen }: Props) => {
 	return (
 		<div className={className}>
 			<Button onClick={handleClick}>Leave</Button>
-			<PopupContainer
-				className={styles['popup-container']}
-				isOpen={isOpen}
-				setIsOpen={setIsOpen}
-			>
-				<div className={styles['popup-main']}>
-					<section className={`${styles['popup-section']}`}>
-						<ProductInfoPopup
-							img={product}
-							id={980778980}
-							desc='Red roses big bouquet'
-							date='23.04.2024'
-						/>
-					</section>
-					<section className={`${styles['popup-section']}`}>
-						<h3 className={styles['form-title']}>Photo Feedback</h3>
-						<PhotoFeedbackForm id={id} />
-					</section>
-				</div>
-			</PopupContainer>
+			{createPortal(
+				<PopupContainer
+					className={styles['popup-container']}
+					isOpen={isOpen}
+					setIsOpen={setIsOpen}
+				>
+					<div className={styles['popup-main']}>
+						<section className={`${styles['popup-section']}`}>
+							<ProductInfoPopup
+								img={product}
+								id={980778980}
+								desc='Red roses big bouquet'
+								date='23.04.2024'
+							/>
+						</section>
+						<section className={`${styles['popup-section']}`}>
+							<h3 className={styles['form-title']}>Photo Feedback</h3>
+							<PhotoFeedbackForm id={id} />
+						</section>
+					</div>
+				</PopupContainer>,
+				document.body,
+			)}
 		</div>
 	);
 };
